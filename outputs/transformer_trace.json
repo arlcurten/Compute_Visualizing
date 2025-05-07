@@ -4,7 +4,7 @@
       "name": "mem_transfer_load_kv_cache",
       "ph": "X",
       "ts": 0,
-      "dur": 1201,
+      "dur": 1239,
       "pid": 0,
       "tid": 0,
       "args": {
@@ -26,8 +26,8 @@
     {
       "name": "layernorm",
       "ph": "X",
-      "ts": 1201,
-      "dur": 335,
+      "ts": 1239,
+      "dur": 317,
       "pid": 0,
       "tid": 1,
       "args": {
@@ -42,8 +42,8 @@
     {
       "name": "linear",
       "ph": "X",
-      "ts": 1536,
-      "dur": 802,
+      "ts": 1556,
+      "dur": 753,
       "pid": 0,
       "tid": 2,
       "args": {
@@ -58,8 +58,8 @@
     {
       "name": "linear",
       "ph": "X",
-      "ts": 2338,
-      "dur": 782,
+      "ts": 2309,
+      "dur": 780,
       "pid": 0,
       "tid": 3,
       "args": {
@@ -74,8 +74,8 @@
     {
       "name": "rotary_embedding",
       "ph": "X",
-      "ts": 3120,
-      "dur": 456,
+      "ts": 3089,
+      "dur": 497,
       "pid": 0,
       "tid": 0,
       "args": {
@@ -92,8 +92,8 @@
     {
       "name": "rotary_embedding",
       "ph": "X",
-      "ts": 3576,
-      "dur": 471,
+      "ts": 3586,
+      "dur": 496,
       "pid": 0,
       "tid": 1,
       "args": {
@@ -110,8 +110,8 @@
     {
       "name": "dot",
       "ph": "X",
-      "ts": 4047,
-      "dur": 992,
+      "ts": 4082,
+      "dur": 985,
       "pid": 0,
       "tid": 2,
       "args": {
@@ -126,8 +126,8 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 5039,
-      "dur": 278,
+      "ts": 5067,
+      "dur": 332,
       "pid": 0,
       "tid": 3,
       "args": {
@@ -142,8 +142,8 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 5317,
-      "dur": 427,
+      "ts": 5399,
+      "dur": 398,
       "pid": 0,
       "tid": 0,
       "args": {
@@ -158,8 +158,8 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 5744,
-      "dur": 438,
+      "ts": 5797,
+      "dur": 418,
       "pid": 0,
       "tid": 1,
       "args": {
@@ -174,8 +174,8 @@
     {
       "name": "dot",
       "ph": "X",
-      "ts": 6182,
-      "dur": 1046,
+      "ts": 6215,
+      "dur": 997,
       "pid": 0,
       "tid": 2,
       "args": {
@@ -190,8 +190,8 @@
     {
       "name": "add",
       "ph": "X",
-      "ts": 7228,
-      "dur": 285,
+      "ts": 7212,
+      "dur": 259,
       "pid": 0,
       "tid": 3,
       "args": {
@@ -206,8 +206,8 @@
     {
       "name": "layernorm",
       "ph": "X",
-      "ts": 7513,
-      "dur": 251,
+      "ts": 7471,
+      "dur": 297,
       "pid": 0,
       "tid": 0,
       "args": {
@@ -222,8 +222,8 @@
     {
       "name": "dot",
       "ph": "X",
-      "ts": 7764,
-      "dur": 1017,
+      "ts": 7768,
+      "dur": 1047,
       "pid": 0,
       "tid": 1,
       "args": {
@@ -238,8 +238,8 @@
     {
       "name": "add",
       "ph": "X",
-      "ts": 8781,
-      "dur": 250,
+      "ts": 8815,
+      "dur": 346,
       "pid": 0,
       "tid": 2,
       "args": {
@@ -254,8 +254,8 @@
     {
       "name": "mem_transfer_store_kv_cache",
       "ph": "X",
-      "ts": 9031,
-      "dur": 1481,
+      "ts": 9161,
+      "dur": 1544,
       "pid": 0,
       "tid": 3,
       "args": {

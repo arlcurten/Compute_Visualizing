@@ -1,5 +1,6 @@
 # transformer_block_tracer.py
 import torch
+import os
 from llama_loader import load_llama_model
 from scheduler import RoundRobinScheduler
 from perfetto_writer import PerfettoTraceWriter, generate_trace_events
@@ -13,7 +14,12 @@ def main():
     model, config, tokenizer = load_llama_model(device=device)
 
     # dump the model into a text for self reference
-    with open("llama_model_structure.txt", "w") as f:
+    output_dir = "outputs"
+    # if not os.path.exists(output_dir):
+    #     os.makedirs(output_dir)
+    filename_dumpModel = os.path.join(output_dir, "llama_model_structure.txt")
+
+    with open(filename_dumpModel, "w") as f:
         print(model, file=f)
         print("\n\n", file=f)
     
@@ -21,9 +27,10 @@ def main():
     block = model.model.layers[0]  # For instance, the first transformer block (LLAMA architecture)
 
     # dump the block into a text for self reference
-    with open("llama_model_structure.txt", "a") as f:
+    with open(filename_dumpModel, "a") as f:
         print(block, file=f)
-
+    print("Dumped the model structure into: ", filename_dumpModel)
+    
     # Create dummy inputs for decoding (autoregressive, single token)
     D_q = block.self_attn.q_proj.in_features
     D_k = block.self_attn.k_proj.in_features
@@ -141,7 +148,8 @@ def main():
     scheduler = RoundRobinScheduler(num_engines=4)
     trace_events = generate_trace_events(ops, scheduler)
 
-    writer = PerfettoTraceWriter("transformer_trace.json")
+    filename_erfettoTrace = os.path.join(output_dir, "transformer_trace.json")
+    writer = PerfettoTraceWriter(filename_erfettoTrace)
     for event in trace_events:
         writer.add_event(
             name=event["name"],
@@ -151,7 +159,7 @@ def main():
             args=event["args"]
         )
     writer.write()
-    print("Perfetto trace written to transformer_trace.json")
+    print("Perfetto trace written into: ", filename_erfettoTrace)
 
 if __name__ == "__main__":
     main()
