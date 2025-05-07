@@ -15,7 +15,7 @@
 * Query matrix $Q$: shape $(1, D)$
 * Cached key matrix $K$: shape $(N, D)$
 * Cached value matrix $V$: shape $(N, D)$
-* Dimensions $N=4$ (KV size) and $D=16$ (engine_size)
+* Dimensions $N=4$ (KV size / past tokens) and D=2048 ~~$D=16$~~ (hidden dimension per token)
 * 4 concurrent compute engines
 * Profiler has estimated duration time only (see below Additional Information for more details)
 
