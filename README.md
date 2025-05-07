@@ -23,13 +23,18 @@
 ![without parallelism.jpg](/no_parallelism.jpg)
 <br/>
 
-* With parallelism(TBD)
+* With parallelism (TBD)
 
 <br/>
 
 
 # Project Structure
-* (TBD)
+transformer_block_tracer.py (main)
+└→ llama_loader.py 
+└→ scheduler.py (in processing)
+└→ perfetto_writer.py
+   └→ profiler.py
+
 
 **Additional Information**: 
 * customerized Attention
