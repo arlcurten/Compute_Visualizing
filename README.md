@@ -10,7 +10,7 @@
 * One transformer block
 * [Perfetto](https://ui.perfetto.dev/) trace for visualization
 * Dynamically adapts to changes
-* 
+  
 **Relative parameters**:
 * Query matrix $Q$: shape $(1, D)$
 * Cached key matrix $K$: shape $(N, D)$
@@ -38,11 +38,11 @@
 
 
 
-### to do item:
+**To-do Items**:
 1. torch.profile → automatically update?
 
 <br/>
 
-### Reference:
+**References**:
 1. ChatGPT
 2. [Exploring and building the LLaMA 3 Architecture : A Deep Dive into Components, Coding, and Inference Techniques](https://medium.com/@vi.ai_/exploring-and-building-the-llama-3-architecture-a-deep-dive-into-components-coding-and-43d4097cfbbb)
