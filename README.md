@@ -29,10 +29,10 @@
 
 
 # Project Structure
-transformer_block_tracer.py (main)
-└→ llama_loader.py 
-└→ scheduler.py (in processing)
-└→ perfetto_writer.py
+transformer_block_tracer.py (main) \
+└→ llama_loader.py \
+└→ scheduler.py (in processing) \
+└→ perfetto_writer.py \
    └→ profiler.py
 
 
