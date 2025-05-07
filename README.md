@@ -29,11 +29,15 @@
 
 
 # Project Structure
-transformer_block_tracer.py (main) \
-└→ llama_loader.py \
-└→ scheduler.py (in processing) \
-└→ perfetto_writer.py \
-   └→ profiler.py
+```bash
+project-root/
+├── README.md                     # Project overview
+├── transformer_block_tracer.py   # Main function
+├── llama_loader.py               # Model import
+├── scheduler.py                  # Scheduling tasks (in processing)
+└── perfetto_writer.py            # Write JSON for Perfetto 
+    └── profiler.py               # Profiles for writer
+
 
 
 **Additional Information**: 
