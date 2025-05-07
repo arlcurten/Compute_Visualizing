@@ -32,12 +32,16 @@
 # Project Structure
 ```bash
 project-root/
-├── README.md                     # Project overview
-├── transformer_block_tracer.py   # Main function
-├── llama_loader.py               # Model import
-├── scheduler.py                  # Scheduling tasks (in processing)
-└── perfetto_writer.py            # Write JSON for Perfetto 
-    └── profiler.py               # Profiles for writer
+├── README.md                         # Project overview
+├── src/                
+│   ├── transformer_block_tracer.py   # Main function
+│   ├── llama_loader.py               # Model import
+│   ├── scheduler.py                  # Scheduling tasks (in processing)
+│   └── perfetto_writer.py            # Write JSON for Perfetto 
+│       └── profiler.py               # Profiles for writer
+└── output/
+    ├── llama_model_structure.txt     # Impoted Model dump
+    └── transformer_trace.json        # JSON file to Perfetto
 ```
 
 <br/>
