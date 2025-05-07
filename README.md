@@ -17,6 +17,7 @@
 * Cached value matrix $V$: shape $(N, D)$
 * Dimensions $N=4$ (KV size) and $D=16$ (engine_size)
 * 4 concurrent compute engines
+* Profiler has estimated duration time only (see below Additional Information for more details)
 
 **Results**:
 * Without parallelism
@@ -39,16 +40,20 @@ project-root/
     └── profiler.py               # Profiles for writer
 ```
 
+<br/>
+
 **Additional Information**: 
-* customerized Attention
-* 3-pass softmax
-* num3 projection num4 RoPE are modified and no the exact
+* Customerized attention block in order to display 3-pass softmax (max-subtraction, exponentiation, normalization)
+* Modified structure in layer #3 projection and #4 RoPE for tensor dimension matched and Rorate Positional Encoding implementation. Model behavior may be slightly different because the project is for processing load simulating and scheduling only
+* Profiler has estimated duration time only: If real durations are needed, has to run forward pass on oringal Llama model with torch.profile() tool, log real execution time, and fill them onto profiler.py for each operations
 
 **To-do Items**:
-1. torch.profile → automatically update?
+1. Well adjust scheduling algorithm
+2. Automate profile update (for each time duration) accommodated to real execution environment (forward pass with torch.profile() → automatically update parameters in profiler.py
 
 <br/>
 
 **References**:
 1. [Exploring and building the LLaMA 3 Architecture : A Deep Dive into Components, Coding, and Inference Techniques](https://medium.com/@vi.ai_/exploring-and-building-the-llama-3-architecture-a-deep-dive-into-components-coding-and-43d4097cfbbb)
-2. ChatGPT
+2. [LLM Optimization and Deployment on SiFive RISC-V Intelligence Products](https://www.sifive.com/blog/llm-optimization-and-deployment-on-sifive-intellig)
+3. ChatGPT
