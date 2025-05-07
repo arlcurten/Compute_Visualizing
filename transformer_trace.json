@@ -1,0 +1,180 @@
+{
+  "traceEvents": [
+    {
+      "name": "mem_transfer_load_kv_cache",
+      "ph": "X",
+      "ts": 0,
+      "dur": 1189,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "mem_transfer_load_kv_cache"
+      }
+    },
+    {
+      "name": "layernorm",
+      "ph": "X",
+      "ts": 1189,
+      "dur": 304,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "layernorm"
+      }
+    },
+    {
+      "name": "linear",
+      "ph": "X",
+      "ts": 1493,
+      "dur": 839,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "linear"
+      }
+    },
+    {
+      "name": "linear",
+      "ph": "X",
+      "ts": 2332,
+      "dur": 808,
+      "pid": 0,
+      "tid": 3,
+      "args": {
+        "type": "linear"
+      }
+    },
+    {
+      "name": "rotary_embedding",
+      "ph": "X",
+      "ts": 3140,
+      "dur": 504,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "rotary_embedding"
+      }
+    },
+    {
+      "name": "rotary_embedding",
+      "ph": "X",
+      "ts": 3644,
+      "dur": 452,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "rotary_embedding"
+      }
+    },
+    {
+      "name": "dot",
+      "ph": "X",
+      "ts": 4096,
+      "dur": 973,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "dot"
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 5069,
+      "dur": 338,
+      "pid": 0,
+      "tid": 3,
+      "args": {
+        "type": "softmax_max"
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 5407,
+      "dur": 401,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_exp"
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 5808,
+      "dur": 421,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_norm"
+      }
+    },
+    {
+      "name": "dot",
+      "ph": "X",
+      "ts": 6229,
+      "dur": 969,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "dot"
+      }
+    },
+    {
+      "name": "add",
+      "ph": "X",
+      "ts": 7198,
+      "dur": 348,
+      "pid": 0,
+      "tid": 3,
+      "args": {
+        "type": "add"
+      }
+    },
+    {
+      "name": "layernorm",
+      "ph": "X",
+      "ts": 7546,
+      "dur": 307,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "layernorm"
+      }
+    },
+    {
+      "name": "dot",
+      "ph": "X",
+      "ts": 7853,
+      "dur": 1015,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "dot"
+      }
+    },
+    {
+      "name": "add",
+      "ph": "X",
+      "ts": 8868,
+      "dur": 255,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "add"
+      }
+    },
+    {
+      "name": "mem_transfer_store_kv_cache",
+      "ph": "X",
+      "ts": 9123,
+      "dur": 1500,
+      "pid": 0,
+      "tid": 3,
+      "args": {
+        "type": "mem_transfer_store_kv_cache"
+      }
+    }
+  ]
+}
