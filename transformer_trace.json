@@ -4,176 +4,274 @@
       "name": "mem_transfer_load_kv_cache",
       "ph": "X",
       "ts": 0,
-      "dur": 1189,
+      "dur": 1201,
       "pid": 0,
       "tid": 0,
       "args": {
-        "type": "mem_transfer_load_kv_cache"
+        "type": "mem_transfer_load_kv_cache",
+        "output_shape": [
+          [
+            1,
+            4,
+            2048
+          ],
+          [
+            1,
+            4,
+            2048
+          ]
+        ]
       }
     },
     {
       "name": "layernorm",
       "ph": "X",
-      "ts": 1189,
-      "dur": 304,
+      "ts": 1201,
+      "dur": 335,
       "pid": 0,
       "tid": 1,
       "args": {
-        "type": "layernorm"
+        "type": "layernorm",
+        "output_shape": [
+          1,
+          1,
+          2048
+        ]
       }
     },
     {
       "name": "linear",
       "ph": "X",
-      "ts": 1493,
-      "dur": 839,
+      "ts": 1536,
+      "dur": 802,
       "pid": 0,
       "tid": 2,
       "args": {
-        "type": "linear"
+        "type": "linear",
+        "output_shape": [
+          1,
+          1,
+          2048
+        ]
       }
     },
     {
       "name": "linear",
       "ph": "X",
-      "ts": 2332,
-      "dur": 808,
+      "ts": 2338,
+      "dur": 782,
       "pid": 0,
       "tid": 3,
       "args": {
-        "type": "linear"
+        "type": "linear",
+        "output_shape": [
+          1,
+          4,
+          2048
+        ]
       }
     },
     {
       "name": "rotary_embedding",
       "ph": "X",
-      "ts": 3140,
-      "dur": 504,
+      "ts": 3120,
+      "dur": 456,
       "pid": 0,
       "tid": 0,
       "args": {
-        "type": "rotary_embedding"
+        "type": "rotary_embedding",
+        "output_shape": [
+          1,
+          1,
+          1,
+          32,
+          64
+        ]
       }
     },
     {
       "name": "rotary_embedding",
       "ph": "X",
-      "ts": 3644,
-      "dur": 452,
+      "ts": 3576,
+      "dur": 471,
       "pid": 0,
       "tid": 1,
       "args": {
-        "type": "rotary_embedding"
+        "type": "rotary_embedding",
+        "output_shape": [
+          1,
+          1,
+          4,
+          32,
+          64
+        ]
       }
     },
     {
       "name": "dot",
       "ph": "X",
-      "ts": 4096,
-      "dur": 973,
+      "ts": 4047,
+      "dur": 992,
       "pid": 0,
       "tid": 2,
       "args": {
-        "type": "dot"
+        "type": "dot",
+        "output_shape": [
+          1,
+          1,
+          4
+        ]
       }
     },
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 5069,
-      "dur": 338,
+      "ts": 5039,
+      "dur": 278,
       "pid": 0,
       "tid": 3,
       "args": {
-        "type": "softmax_max"
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          1
+        ]
       }
     },
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 5407,
-      "dur": 401,
+      "ts": 5317,
+      "dur": 427,
       "pid": 0,
       "tid": 0,
       "args": {
-        "type": "softmax_exp"
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          4
+        ]
       }
     },
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 5808,
-      "dur": 421,
+      "ts": 5744,
+      "dur": 438,
       "pid": 0,
       "tid": 1,
       "args": {
-        "type": "softmax_norm"
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          4
+        ]
       }
     },
     {
       "name": "dot",
       "ph": "X",
-      "ts": 6229,
-      "dur": 969,
+      "ts": 6182,
+      "dur": 1046,
       "pid": 0,
       "tid": 2,
       "args": {
-        "type": "dot"
+        "type": "dot",
+        "output_shape": [
+          1,
+          1,
+          2048
+        ]
       }
     },
     {
       "name": "add",
       "ph": "X",
-      "ts": 7198,
-      "dur": 348,
+      "ts": 7228,
+      "dur": 285,
       "pid": 0,
       "tid": 3,
       "args": {
-        "type": "add"
+        "type": "add",
+        "output_shape": [
+          1,
+          1,
+          2048
+        ]
       }
     },
     {
       "name": "layernorm",
       "ph": "X",
-      "ts": 7546,
-      "dur": 307,
+      "ts": 7513,
+      "dur": 251,
       "pid": 0,
       "tid": 0,
       "args": {
-        "type": "layernorm"
+        "type": "layernorm",
+        "output_shape": [
+          1,
+          1,
+          2048
+        ]
       }
     },
     {
       "name": "dot",
       "ph": "X",
-      "ts": 7853,
-      "dur": 1015,
+      "ts": 7764,
+      "dur": 1017,
       "pid": 0,
       "tid": 1,
       "args": {
-        "type": "dot"
+        "type": "dot",
+        "output_shape": [
+          1,
+          1,
+          2048
+        ]
       }
     },
     {
       "name": "add",
       "ph": "X",
-      "ts": 8868,
-      "dur": 255,
+      "ts": 8781,
+      "dur": 250,
       "pid": 0,
       "tid": 2,
       "args": {
-        "type": "add"
+        "type": "add",
+        "output_shape": [
+          1,
+          1,
+          2048
+        ]
       }
     },
     {
       "name": "mem_transfer_store_kv_cache",
       "ph": "X",
-      "ts": 9123,
-      "dur": 1500,
+      "ts": 9031,
+      "dur": 1481,
       "pid": 0,
       "tid": 3,
       "args": {
-        "type": "mem_transfer_store_kv_cache"
+        "type": "mem_transfer_store_kv_cache",
+        "output_shape": [
+          [
+            1,
+            4,
+            2048
+          ],
+          [
+            1,
+            4,
+            2048
+          ]
+        ]
       }
     }
   ]

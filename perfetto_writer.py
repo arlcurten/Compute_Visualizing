@@ -32,6 +32,7 @@ def generate_trace_events(ops, scheduler):
         if op_type == "mem_transfer":
             # shape,  = op["shape"]
             # description = op["description"]
+            output_size = op["output_size"]
             trace_events.append({
                 "name": f"mem_transfer: {op_type}",
                 "ts": start_time,
@@ -41,11 +42,12 @@ def generate_trace_events(ops, scheduler):
                     "type": "mem_transfer",
                     #"description": description,
                     #"input_shape": shape,
-                    #"output_shape": shape,
+                    "output_shape": output_size,
                 }
             })
         else:
             # shape = op["shape"]
+            output_size = op["output_size"]
             trace_events.append({
                 "name": op_type,
                 "ts": start_time,
@@ -54,7 +56,7 @@ def generate_trace_events(ops, scheduler):
                 "args": {
                     "type": op_type,
                     #"input_shape": shape,
-                    #"output_shape": shape,
+                    "output_shape": output_size,
                 }
             })
     return trace_events
