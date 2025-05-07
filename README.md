@@ -1,17 +1,13 @@
 ﻿# Compute_visualizing
 
 **Purpose**: Visualizing LLAMA3.2 Compute Chain
-
-**Scenario**: 
-* [LLAMA-3.2-1B model](https://huggingface.co/meta-llama/Llama-3.2-1B) from HuggingFace
-* auto regressive decoding
-* one transformer block
-* [Perfetto](https://ui.perfetto.dev/) trace for visualization
-* dynamically adapts to changes
-
-
 **Compute Operations**: dot product, 3-pass softmax, normalization, positional encoding, memory transfers
-
+**Settings**: 
+* [LLAMA-3.2-1B model](https://huggingface.co/meta-llama/Llama-3.2-1B) from HuggingFace
+* Auto regressive decoding
+* One transformer block
+* [Perfetto](https://ui.perfetto.dev/) trace for visualization
+* Dynamically adapts to changes
 **Relative parameters**:
 * Query matrix $Q$: shape $(1, D)$
 * Cached key matrix $K$: shape $(N, D)$
@@ -20,11 +16,12 @@
 * 4 concurrent compute engines
 
 **Results**:
+* Without parallelism
 ![without parallelism.jpg](/no_parallelism.jpg)
-without parallelism
-
+<br/>
+* With parallelism
 (TBD)
-with parallelism
+
 
 <br/>
 # Project Structure
