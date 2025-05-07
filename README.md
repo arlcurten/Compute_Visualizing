@@ -37,15 +37,12 @@ project-root/
 ├── scheduler.py                  # Scheduling tasks (in processing)
 └── perfetto_writer.py            # Write JSON for Perfetto 
     └── profiler.py               # Profiles for writer
-
-
+```
 
 **Additional Information**: 
 * customerized Attention
 * 3-pass softmax
 * num3 projection num4 RoPE are modified and no the exact
-
-
 
 **To-do Items**:
 1. torch.profile → automatically update?
