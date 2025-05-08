@@ -1,4 +1,12 @@
-# profiler.py
+"""
+Description:
+    This module provides a function to estimate the duration of various operations in a transformer model.
+    The durations are simulated based on operation type and data size, with some added randomness for realism.
+
+    The estimated durations are not tied to real hardware and are intended for profiling purposes only.
+    An ideal case would involve using actual hardware performance counters or profiling tools to get accurate timings.
+    For example: using NVIDIA's nvprof or PyTorch's built-in profiler to acquire real information from forward pass operations.
+"""
 
 import random
 

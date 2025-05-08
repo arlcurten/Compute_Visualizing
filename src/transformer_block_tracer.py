@@ -1,4 +1,9 @@
-# transformer_block_tracer.py
+"""
+Description:
+    This script simulates the forward pass of a transformer block in a language model (LLAMA) 
+    and generates a trace of the operations performed.
+"""
+
 import torch
 import os
 from llama_loader import load_llama_model

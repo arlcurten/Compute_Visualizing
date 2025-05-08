@@ -1,7 +1,9 @@
 """
-Round Robin Scheduler (for testing)
-Here, each task is globally blocking (i.e., no parallelism at all)
+Description: 
+    Round Robin Scheduler (for testing)
+    Here, each task is globally blocking (i.e., no parallelism at all)
 """
+
 class RoundRobinScheduler:
     def __init__(self, num_engines=4):
         self.num_engines = num_engines
@@ -17,7 +19,9 @@ class RoundRobinScheduler:
 
 
 
-
+"""
+TBD a real scheduler for optimizing the scheduling of tasks across multiple engines
+"""
 """
 class RoundRobinScheduler:
     def __init__(self, num_engines=4):
