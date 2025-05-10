@@ -7,8 +7,8 @@ Description:
 import torch
 import os
 from llama_loader import load_llama_model
-from scheduler import RoundRobinScheduler
-from perfetto_writer import PerfettoTraceWriter, generate_trace_events
+from scheduler import Scheduler, generate_trace_events
+from perfetto_writer import PerfettoTraceWriter
 from transformers.models.llama.modeling_llama import apply_rotary_pos_emb
 import time
 
@@ -106,7 +106,7 @@ def main():
     start = time.perf_counter()
     scores = torch.matmul(q_rope, k_rope_T) / torch.sqrt(torch.tensor(min_dim, dtype=torch.float32))
     dur = (time.perf_counter() - start) * 1e6
-    ops.append({"name": "QK^T", "type": "dot", "inputs": ["q_rope", "k^T"], "output": "scores", "size": (1, N), "dur": dur, "output_size": list(scores.shape)})
+    ops.append({"name": "QK^T", "type": "dot", "inputs": ["q_rope", "k_rope"], "output": "scores", "size": (1, N), "dur": dur, "output_size": list(scores.shape)})
 
     start = time.perf_counter()
     max_scores = torch.max(scores, dim=-1, keepdim=True).values
@@ -150,9 +150,10 @@ def main():
 
     
     # Schedule the ops across threads
-    scheduler = RoundRobinScheduler(num_engines=4)
+    scheduler = Scheduler(num_engines=4)
     trace_events = generate_trace_events(ops, scheduler)
 
+    # Write the trace events to a Perfetto trace file
     filename_erfettoTrace = os.path.join(output_dir, "transformer_trace.json")
     writer = PerfettoTraceWriter(filename_erfettoTrace)
     for event in trace_events:
