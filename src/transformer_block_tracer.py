@@ -14,8 +14,8 @@ import time
 
 def main():
     # Load model and prepare block
-    # device = 'cpu'  # or 'cuda' if supported
-    device = 'cuda'  # or 'cuda' if supported
+    # device = 'cpu'  # default device
+    device = 'cuda'  # if supported
     model, config, tokenizer = load_llama_model(device=device)
 
     # dump the model into a text for self reference
@@ -50,8 +50,9 @@ def main():
     # Simulate the forward pass through the transformer block to trace the operations
     ops = []
 
+
     # 1. Memory Transfer: Loading KV Cache (keys and values)
-    ops.append({"name": "mem_transfer_load_kv_cache", "type": "mem_transfer_load_kv_cache", "inputs": ["kv_cache"], "output": "k_v_cache", "dur": 1200, "output_size": [list(k.shape), list(v.shape)]})
+    ops.append({"name": "mem_transfer_load_kv_cache", "type": "mem_transfer_load_kv_cache", "inputs": ["kv_cache"], "output": ["k","v"], "dur": 1200, "output_size": [list(k.shape), list(v.shape)]})
 
     # 2. LayerNorm before attention
     start = time.perf_counter()
@@ -146,7 +147,7 @@ def main():
     ops.append({"name": "Residual2", "type": "add", "inputs": ["mlp_out", "mlp_input"], "output": "out", "dur": (time.perf_counter() - start) * 1e6, "output_size": list(out.shape)})
 
     # 10. Memory Transfer: Storing updated KV cache
-    ops.append({"name": "mem_transfer_store_kv_cache", "type": "mem_transfer_store_kv_cache", "inputs": ["updated_kv_cache"], "output": "kv_cache", "dur": 1200, "output_size": [list(k.shape), list(v.shape)]})
+    ops.append({"name": "mem_transfer_store_kv_cache", "type": "mem_transfer_store_kv_cache", "inputs": ["attn_out"], "output": "kv_cache", "dur": 1200, "output_size": [list(k.shape), list(v.shape)]})
 
     
     # Schedule the ops across threads

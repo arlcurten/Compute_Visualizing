@@ -4,7 +4,7 @@
       "name": "mem_transfer_load_kv_cache",
       "ph": "X",
       "ts": 0,
-      "dur": 1227,
+      "dur": 1204,
       "pid": 0,
       "tid": 0,
       "args": {
@@ -24,10 +24,10 @@
       }
     },
     {
-      "name": "layernorm",
+      "name": "LayerNorm1",
       "ph": "X",
       "ts": 0,
-      "dur": 343,
+      "dur": 307,
       "pid": 0,
       "tid": 1,
       "args": {
@@ -40,12 +40,12 @@
       }
     },
     {
-      "name": "linear",
+      "name": "Q_proj",
       "ph": "X",
-      "ts": 0,
-      "dur": 837,
+      "ts": 307,
+      "dur": 817,
       "pid": 0,
-      "tid": 2,
+      "tid": 1,
       "args": {
         "type": "linear",
         "output_shape": [
@@ -56,12 +56,12 @@
       }
     },
     {
-      "name": "linear",
+      "name": "K_proj",
       "ph": "X",
-      "ts": 0,
-      "dur": 759,
+      "ts": 1204,
+      "dur": 816,
       "pid": 0,
-      "tid": 3,
+      "tid": 0,
       "args": {
         "type": "linear",
         "output_shape": [
@@ -72,28 +72,10 @@
       }
     },
     {
-      "name": "rotary_embedding",
+      "name": "RoPE_q",
       "ph": "X",
-      "ts": 1227,
-      "dur": 529,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "rotary_embedding",
-        "output_shape": [
-          1,
-          1,
-          1,
-          32,
-          64
-        ]
-      }
-    },
-    {
-      "name": "rotary_embedding",
-      "ph": "X",
-      "ts": 343,
-      "dur": 491,
+      "ts": 1124,
+      "dur": 458,
       "pid": 0,
       "tid": 1,
       "args": {
@@ -101,6 +83,24 @@
         "output_shape": [
           1,
           1,
+          1,
+          32,
+          64
+        ]
+      }
+    },
+    {
+      "name": "RoPE_k",
+      "ph": "X",
+      "ts": 2020,
+      "dur": 498,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "rotary_embedding",
+        "output_shape": [
+          1,
+          1,
           4,
           32,
           64
@@ -108,12 +108,12 @@
       }
     },
     {
-      "name": "dot",
+      "name": "QK^T",
       "ph": "X",
-      "ts": 837,
-      "dur": 1047,
+      "ts": 2518,
+      "dur": 1032,
       "pid": 0,
-      "tid": 2,
+      "tid": 0,
       "args": {
         "type": "dot",
         "output_shape": [
@@ -126,10 +126,10 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 759,
-      "dur": 312,
+      "ts": 3550,
+      "dur": 277,
       "pid": 0,
-      "tid": 3,
+      "tid": 0,
       "args": {
         "type": "softmax_max",
         "output_shape": [
@@ -142,8 +142,8 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 1756,
-      "dur": 368,
+      "ts": 3827,
+      "dur": 428,
       "pid": 0,
       "tid": 0,
       "args": {
@@ -158,10 +158,10 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 834,
-      "dur": 353,
+      "ts": 4255,
+      "dur": 350,
       "pid": 0,
-      "tid": 1,
+      "tid": 0,
       "args": {
         "type": "softmax_norm",
         "output_shape": [
@@ -172,12 +172,12 @@
       }
     },
     {
-      "name": "dot",
+      "name": "Attn x V",
       "ph": "X",
-      "ts": 1884,
-      "dur": 1017,
+      "ts": 4605,
+      "dur": 977,
       "pid": 0,
-      "tid": 2,
+      "tid": 0,
       "args": {
         "type": "dot",
         "output_shape": [
@@ -188,12 +188,12 @@
       }
     },
     {
-      "name": "add",
+      "name": "Residual1",
       "ph": "X",
-      "ts": 1071,
-      "dur": 346,
+      "ts": 5582,
+      "dur": 253,
       "pid": 0,
-      "tid": 3,
+      "tid": 0,
       "args": {
         "type": "add",
         "output_shape": [
@@ -204,10 +204,10 @@
       }
     },
     {
-      "name": "layernorm",
+      "name": "LayerNorm2",
       "ph": "X",
-      "ts": 2124,
-      "dur": 268,
+      "ts": 5835,
+      "dur": 319,
       "pid": 0,
       "tid": 0,
       "args": {
@@ -220,12 +220,12 @@
       }
     },
     {
-      "name": "dot",
+      "name": "MLP",
       "ph": "X",
-      "ts": 1187,
-      "dur": 996,
+      "ts": 6154,
+      "dur": 968,
       "pid": 0,
-      "tid": 1,
+      "tid": 0,
       "args": {
         "type": "dot",
         "output_shape": [
@@ -236,12 +236,12 @@
       }
     },
     {
-      "name": "add",
+      "name": "Residual2",
       "ph": "X",
-      "ts": 2901,
-      "dur": 251,
+      "ts": 7122,
+      "dur": 310,
       "pid": 0,
-      "tid": 2,
+      "tid": 0,
       "args": {
         "type": "add",
         "output_shape": [
@@ -254,10 +254,10 @@
     {
       "name": "mem_transfer_store_kv_cache",
       "ph": "X",
-      "ts": 1417,
-      "dur": 1540,
+      "ts": 5582,
+      "dur": 1498,
       "pid": 0,
-      "tid": 3,
+      "tid": 1,
       "args": {
         "type": "mem_transfer_store_kv_cache",
         "output_shape": [

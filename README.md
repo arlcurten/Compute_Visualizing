@@ -49,11 +49,11 @@ project-root/
 **Additional Information**: 
 * Customerized attention block in order to display 3-pass softmax (max-subtraction, exponentiation, normalization)
 * Modified structure in layer #3 projection and #4 RoPE for tensor dimension matched and Rorate Positional Encoding implementation. Model behavior may be slightly different because the project is for processing load simulating and scheduling only
-* Profiler has estimated duration time only: If real durations are needed, has to run forward pass on oringal Llama model with torch.profile() tool, log real execution time, and fill them onto profiler.py for each operations
+* Profiler has estimated duration time only: If real durations are needed, has to run forward pass on oringal Llama model with torch.profile() tool, log real execution time, and fill them into profiler.py/directly edit default values of logging for each operations
 
 **To-do Items**:
-1. Well adjust scheduling algorithm
-2. Automate profile update (for each time duration) accommodated to real execution environment (forward pass with torch.profile() → automatically update parameters in profiler.py
+1. Well adjust scheduling algorithm -> possible improvement on token-wise (multi-token) scheduling
+2. Profile/duration update accommodated to real execution environment (maybe perform a forward pass with torch.profile() on original model → update parameters in profiler.py/directly edit default values of logging)
 
 <br/>
 
