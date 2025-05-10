@@ -24,7 +24,8 @@
 ![without parallelism.jpg](/no_parallelism.jpg)
 <br/>
 
-* With parallelism (TBD)
+* With parallelism
+![with parallelism.jpg](/with_parallelism_1.jpg)
 
 <br/>
 
