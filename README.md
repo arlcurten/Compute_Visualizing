@@ -21,11 +21,11 @@
 
 **Results**:
 * Without parallelism
-![without parallelism.jpg](/no_parallelism.jpg)
+![without parallelism.jpg](outputs/no_parallelism.jpg)
 <br/>
 
 * With parallelism
-![with parallelism.jpg](/with_parallelism_1.jpg)
+![with parallelism.jpg](outputs/with_parallelism_1.jpg)
 
 <br/>
 
