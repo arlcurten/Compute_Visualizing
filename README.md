@@ -54,7 +54,8 @@ project-root/
 
 **To-do Items**:
 1. Well adjust scheduling algorithm -> possible improvement on token-wise (multi-token) scheduling
-2. Profile/duration update accommodated to real execution environment (maybe perform a forward pass with torch.profile() on original model → update parameters in profiler.py/directly edit default values of logging)
+2. Profile(duration) update should be accommodated to real execution environment 
+   (maybe perform a forward pass with torch.profile() on original model → update parameters in profiler.py/directly edit default values of logging)
 
 <br/>
 
