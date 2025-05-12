@@ -1,4 +1,4 @@
-﻿# Compute_visualizing
+﻿# Compute_visualizing (Inferencing Scheduling)
 
 **Purpose**: Visualizing LLAMA3.2 Compute Chain
 
