@@ -21,16 +21,16 @@
 
 **Results**:
 * Without parallelism
-![without parallelism.jpg](output/no_parallelism.jpg)
+![without parallelism.jpg](outputs/no_parallelism.jpg)
 <br/>
 
 * With parallelism
-![with parallelism.jpg](output/with_parallelism_1.jpg)
+![with parallelism.jpg](outputs/with_parallelism_1.jpg)
 
 * Multi-head parallelism 
-![Multi-head parallelism 1.jpg](output/with_parallelism_multi_head_1.jpg)
+![Multi-head parallelism 1.jpg](outputs/with_parallelism_multi_head_1.jpg)
   zoom in for scattered part
-![Multi-head parallelism 2.jpg](output/with_parallelism_multi_head_2.jpg)
+![Multi-head parallelism 2.jpg](outputs/with_parallelism_multi_head_2.jpg)
 
 <br/>
 
@@ -60,7 +60,8 @@ project-root/
 
 **To-do Items**:
 1. Well adjust scheduling algorithm -> possible improvement on token-wise (multi-token) scheduling
-2. Profile/duration update accommodated to real execution environment (maybe perform a forward pass with torch.profile() on original model → update parameters in profiler.py/directly edit default values of logging)
+2. Profile(duration) update should be accommodated to real execution environment 
+   (maybe perform a forward pass with torch.profile() on original model → update parameters in profiler.py/directly edit default values of logging)
 
 <br/>
 
