@@ -10,7 +10,7 @@ Description:
 
 import random
 
-def estimate_duration(op_type: str, size=None):
+def estimate_duration(op_type: str, num_heads=1):
     """
     Simulates operation durations (in microseconds) based on operation type and data size.
     These values are heuristic and not tied to real hardware.
@@ -19,11 +19,12 @@ def estimate_duration(op_type: str, size=None):
     "layernorm": 300,
     "linear": 800,
     "rotary_embedding": 500,
+    "multihead_dot": 1000/num_heads,
     "dot": 1000,
-    "softmax_max": 300,
-    "softmax_exp": 400,
-    "softmax_sum": 300,
-    "softmax_norm": 400,
+    "softmax_max": 300/num_heads,
+    "softmax_exp": 400/num_heads,
+    "softmax_norm": 400/num_heads,
+    # "softmax_sum": 300/num_heads,
     "mask": 200,
     "add": 300,
     "reduce_sum": 300,
@@ -39,10 +40,11 @@ def estimate_duration(op_type: str, size=None):
 
     # Adjust duration based on size (if available)
     duration = base_durations[op_type]
-    if size is not None:
-        # Rough scaling: larger tensors take more time
-        scale = 1 + 0.01 * sum(size)
-        duration = int(duration * scale)
 
-    # Add some noise for realism
-    return duration + random.randint(-50, 50)
+    # Rough scaling: larger tensors take more time
+    scale = 1 + 0.01
+    duration = int(duration * scale)
+    # Add some noise for realism (+-5%)
+    duration += random.randint(-int(duration*0.05), int(duration*0.05))
+
+    return duration

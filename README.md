@@ -21,11 +21,16 @@
 
 **Results**:
 * Without parallelism
-![without parallelism.jpg](/no_parallelism.jpg)
+![without parallelism.jpg](output/no_parallelism.jpg)
 <br/>
 
 * With parallelism
-![with parallelism.jpg](/with_parallelism_1.jpg)
+![with parallelism.jpg](output/with_parallelism_1.jpg)
+
+* Multi-head parallelism 
+![Multi-head parallelism 1.jpg](output/with_parallelism_multi_head_1.jpg)
+  zoom in for scattered part
+![Multi-head parallelism 2.jpg](output/with_parallelism_multi_head_2.jpg)
 
 <br/>
 
@@ -50,7 +55,8 @@ project-root/
 **Additional Information**: 
 * Customerized attention block in order to display 3-pass softmax (max-subtraction, exponentiation, normalization)
 * Modified structure in layer #3 projection and #4 RoPE for tensor dimension matched and Rorate Positional Encoding implementation. Model behavior may be slightly different because the project is for processing load simulating and scheduling only
-* Profiler has estimated duration time only: If real durations are needed, has to run forward pass on oringal Llama model with torch.profile() tool, log real execution time, and fill them into profiler.py/directly edit default values of logging for each operations
+* Profiler has estimated duration time only: If real durations are needed, has to run forward pass on oringal Llama model with torch.profile() tool, log real execution time, and skip function call to estimate_duration() in ~~fill them into~~ profiler.py for each operations
+* Multi-head processing were implemented to run in parallel. Each duration is just roughly divided total duration by the head_number.
 
 **To-do Items**:
 1. Well adjust scheduling algorithm -> possible improvement on token-wise (multi-token) scheduling
