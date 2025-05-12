@@ -26,10 +26,12 @@
 
 * With parallelism
 ![with parallelism.jpg](outputs/with_parallelism_1.jpg)
+<br/>
 
 * Multi-head parallelism 
 ![Multi-head parallelism 1.jpg](outputs/with_parallelism_multi_head_1.jpg)
-  zoom in for scattered part
+
+  Zoom in to scattered part (Multi-head Attention)
 ![Multi-head parallelism 2.jpg](outputs/with_parallelism_multi_head_2.jpg)
 
 <br/>
