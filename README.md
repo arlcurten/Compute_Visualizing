@@ -37,14 +37,16 @@
 
 * Multi-head parallelism with 2 tokens
 ![multiHead_2Tokens_4engines.jpg](outputs/multiHead_2Tokens_4engines.jpg)
-  mem_load_kv (memory load) of the 2nd token executed right after mem_store_kv (write-back) of the 1st token;
-  LayerNorm (the very first procedure) of the 2nd token was executed earlier and processed with token 1 in parallel 
+    ** mem_load_kv (memory load) of the 2nd token executed right after mem_store_kv (write-back) of the 1st token
+  
+    ** LayerNorm (the very first procedure) of the 2nd token was executed earlier and processed with token 1 in parallel 
 <br/>
 
 * Multi-head parallelism with 2 tokens (test with 8 threads)
 ![multiHead_2Tokens_8engines.jpg](outputs/multiHead_2Tokens_8engines.jpg)
-  mem_load_kv (memory load) of the 2nd token executed right after mem_store_kv (write-back) of the 1st token;
-  LayerNorm, Q_proj, and RoPE_q (the very first procedures) of the 2nd token were processed very early (in the middle of token 1 procedure) since threads availability 
+  ** mem_load_kv (memory load) of the 2nd token executed right after mem_store_kv (write-back) of the 1st token
+  
+  ** LayerNorm, Q_proj, and RoPE_q (the very first procedures) of the 2nd token were processed very early (in the middle of token 1 procedure) since threads availability 
 <br/>
 
 
