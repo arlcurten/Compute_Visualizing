@@ -75,14 +75,14 @@ class Scheduler:
 
 
 
-def generate_trace_events(ops, scheduler, num_heads=1):
+def generate_trace_events(ops, scheduler, num_heads=1, Total_TokenCount=1):
     trace_events = []
     for op in ops:
         op_type = op["type"]
         duration = estimate_duration(op_type, num_heads)   # mapping op_type to estimated duration in profiler.py
         # duration = op["dur"]  # Use the duration from the operation if available
         engine_id, start_time = scheduler.schedule(duration, op)
-        TokenCount = op["toke_n_count"] if "toke_n_count" in op else 0
+        TokenCount = op["toke_n_count"] if "toke_n_count" in op else 1
         head_cnt = op["head_cnt"] if "head_cnt" in op else 0
 
         if op_type == "mem_transfer":
@@ -100,7 +100,7 @@ def generate_trace_events(ops, scheduler, num_heads=1):
                     #"description": description,
                     #"input_shape": shape,
                     "output_shape": output_size,
-                    "toke_n_count": TokenCount,
+                    "toke_count": TokenCount,
                     "head_count": head_cnt
                 }
             })
@@ -116,8 +116,9 @@ def generate_trace_events(ops, scheduler, num_heads=1):
                     "type": op_type,
                     #"input_shape": shape,
                     "output_shape": output_size,
-                    "toke_n_count": TokenCount,
+                    "toke_count": TokenCount,
                     "head_count": head_cnt
                 }
             })
+    print(f"Finished scheduling operations for {scheduler.num_engines} threads, {num_heads} heads, {Total_TokenCount} tokens")
     return trace_events
