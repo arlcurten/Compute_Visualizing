@@ -33,7 +33,16 @@
 
   Zoom in to scattered part (Multi-head Attention)
 ![Multi-head parallelism 2.jpg](outputs/with_parallelism_multi_head_2.jpg)
+<br/>
 
+* multiHead_2Tokens_4engines (TBD)
+![multiHead_2Tokens_4engines.jpg](outputs/multiHead_2Tokens_4engines.jpg)
+  (TBD)
+<br/>
+
+* multiHead_2Tokens_8engines (TBD)
+![multiHead_2Tokens_8engines.jpg](outputs/multiHead_2Tokens_8engines.jpg)
+  (TBD)
 <br/>
 
 
@@ -57,11 +66,11 @@ project-root/
 **Additional Information**: 
 * Customerized attention block in order to display 3-pass softmax (max-subtraction, exponentiation, normalization)
 * Modified structure in layer #3 projection and #4 RoPE for tensor dimension matched and Rorate Positional Encoding implementation. Model behavior may be slightly different because the project is for processing load simulating and scheduling only
-* Profiler has estimated duration time only: If real durations are needed, has to run forward pass on oringal Llama model with torch.profile() tool, log real execution time, and skip function call to estimate_duration() in ~~fill them into~~ profiler.py for each operations
+* Profiler has estimated duration time only: If real durations are needed, has to run forward pass on oringal Llama model with torch.profile() tool, log real execution time, and skip function call to estimate_duration() in profiler.py for each operations
 * Multi-head processing were implemented to run in parallel. Each duration is just roughly divided total duration by the head_number.
 
 **To-do Items**:
-1. Well adjust scheduling algorithm -> possible improvement on token-wise (multi-token) scheduling
+1. Well adjust scheduling with other algorithms
 2. Profile(duration) update should be accommodated to real execution environment 
    (maybe perform a forward pass with torch.profile() on original model → update parameters in profiler.py/directly edit default values of logging)
 
