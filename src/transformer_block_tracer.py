@@ -33,19 +33,19 @@ def simulate_transformer_block(block, config, device, Total_TokenCount):
         # The duration is simulated based on the operation type and data size
 
         # 1. Memory Transfer: Loading KV Cache (keys and values)
-        ops.append({"name": "mem_transfer_load_kv_cache", "type": "mem_transfer_load_kv_cache", "inputs": ["kv_cache"], "output": ["k","v"], "dur": 1200, "output_size": [list(k.shape), list(v.shape)], "toke_n_count": TokenCount})
+        ops.append({"name": "mem_transfer_load_kv_cache", "type": "mem_transfer_load_kv_cache", "inputs": ["kv_cache"], "output": ["k_load", "v_load"], "dur": 1200, "output_size": [list(k.shape), list(v.shape)], "token_n_count": TokenCount})
 
         # 2. LayerNorm before attention
         start = time.perf_counter()
         norm_q = block.input_layernorm(q)
         dur = (time.perf_counter() - start) * 1e6
-        ops.append({"name": "LayerNorm1", "type": "layernorm", "inputs": ["q"], "output": "norm_q", "dur": dur, "output_size": list(norm_q.shape), "toke_n_count": TokenCount})
+        ops.append({"name": "LayerNorm1", "type": "layernorm", "inputs": ["out"], "output": "norm_q", "dur": dur, "output_size": list(norm_q.shape), "token_n_count": TokenCount})
 
         # 3. Project QKV
         start = time.perf_counter()
         q_proj = block.self_attn.q_proj(norm_q)  # [batch_size, seq_len, D_q]
         dur_q = (time.perf_counter() - start) * 1e6
-        ops.append({"name": "Q_proj", "type": "linear", "inputs": ["norm_q"], "output": "q_proj", "dur": dur_q, "output_size": list(q_proj.shape), "toke_n_count": TokenCount})
+        ops.append({"name": "Q_proj", "type": "linear", "inputs": ["norm_q"], "output": "q_proj", "dur": dur_q, "output_size": list(q_proj.shape), "token_n_count": TokenCount})
 
         start = time.perf_counter()
         k_proj = block.self_attn.k_proj(k)
@@ -53,7 +53,7 @@ def simulate_transformer_block(block, config, device, Total_TokenCount):
             projection_layer = torch.nn.Linear(k_proj.shape[-1], q_proj.shape[-1]).to(device)
             k_proj = projection_layer(k_proj)  # manually project k_proj to match q_proj
         dur_k = (time.perf_counter() - start) * 1e6
-        ops.append({"name": "K_proj", "type": "linear", "inputs": ["k"], "output": "k_proj", "dur": dur_k, "output_size": list(k_proj.shape), "toke_n_count": TokenCount})
+        ops.append({"name": "K_proj", "type": "linear", "inputs": ["out"], "output": "k_proj", "dur": dur_k, "output_size": list(k_proj.shape), "token_n_count": TokenCount})
 
         start = time.perf_counter()
         v_proj = block.self_attn.v_proj(v)  # [batch_size, seq_len, D_v]
@@ -61,7 +61,7 @@ def simulate_transformer_block(block, config, device, Total_TokenCount):
             projection_layer2 = torch.nn.Linear(v_proj.shape[-1], q_proj.shape[-1]).to(device)
             v_proj = projection_layer2(v_proj)  # manually project v_proj to match q_proj
         dur_v = (time.perf_counter() - start) * 1e6
-        ops.append({"name": "V_proj", "type": "linear", "inputs": ["v"], "output": "v_proj", "dur": dur_v, "output_size": list(v_proj.shape), "toke_n_count": TokenCount})
+        ops.append({"name": "V_proj", "type": "linear", "inputs": ["out"], "output": "v_proj", "dur": dur_v, "output_size": list(v_proj.shape), "token_n_count": TokenCount})
         
         # Reshape QKV for multi-head attention
         seq_len_q = 1
@@ -81,12 +81,17 @@ def simulate_transformer_block(block, config, device, Total_TokenCount):
         start = time.perf_counter()
         q_rope, _ = apply_rotary_pos_emb(q_proj, cos_q, sin_q, sin_q)
         dur = (time.perf_counter() - start) * 1e6
-        ops.append({"name": "RoPE_q", "type": "rotary_embedding", "inputs": ["q_proj"], "output": "q_rope", "dur": dur, "output_size": list(q_rope.shape), "toke_n_count": TokenCount})
+        ops.append({"name": "RoPE_q", "type": "rotary_embedding", "inputs": ["q_proj"], "output": "q_rope", "dur": dur, "output_size": list(q_rope.shape), "token_n_count": TokenCount})
 
         start = time.perf_counter()
         k_rope, _ = apply_rotary_pos_emb(k_proj, cos_k, sin_k, sin_k)
         dur = (time.perf_counter() - start) * 1e6
-        ops.append({"name": "RoPE_k", "type": "rotary_embedding", "inputs": ["k_proj"], "output": "k_rope", "dur": dur, "output_size": list(k_rope.shape), "toke_n_count": TokenCount})
+        ops.append({"name": "RoPE_k", "type": "rotary_embedding", "inputs": ["k_proj"], "output": "k_rope", "dur": dur, "output_size": list(k_rope.shape), "token_n_count": TokenCount})
+
+        
+        # 4-2. Memory Transfer: Storing updated KV cache
+        ops.append({"name": "mem_transfer_store_kv_cache", "type": "mem_transfer_store_kv_cache", "inputs": ["k_rope", "v_proj", "v_load", "k_load"], "output": "kv_cache", "dur": 1200, "output_size": [list(k.shape), list(v.shape)], "token_n_count": TokenCount})
+
 
         # 5-1. Attention computation
         k_rope_T = k_rope.transpose(-2, -1)  # [1, num_heads, head_dim, seq_len_k]
@@ -94,7 +99,7 @@ def simulate_transformer_block(block, config, device, Total_TokenCount):
         scores = torch.matmul(q_rope, k_rope_T) / (head_dim ** 0.5)  # [1, num_heads, seq_len_q, seq_len_k]
         dur_scores = (time.perf_counter() - start) * 1e6
         for head in range(num_heads):  # output dimensions TBD
-            ops.append({"name": "QK^T", "type": "multihead_dot", "inputs": ["q_rope", "k_rope"], "output": "scores", "dur": dur_scores/num_heads, "output_size": list(scores.shape), "toke_n_count": TokenCount, "head_cnt": head})
+            ops.append({"name": "QK^T", "type": "multihead_dot", "inputs": ["q_rope", "k_rope", "k_read"], "output": "scores", "dur": dur_scores/num_heads, "output_size": list(scores.shape), "token_n_count": TokenCount, "head_cnt": head})
 
         # 5-2. Softmax attention weights
         start = time.perf_counter()
@@ -106,47 +111,45 @@ def simulate_transformer_block(block, config, device, Total_TokenCount):
         dur_softmax_exp = dur_softmax / 3
         dur_softmax_norm = dur_softmax / 3
         for head in range(num_heads):  # output dimensions TBD
-            ops.append({"name": "softmax_max", "type": "softmax_max", "inputs": ["scores"], "output": "max_scores", "size": (1, N), "dur": dur_softmax_max / num_heads, "output_size": list(max_scores.shape), "toke_n_count": TokenCount, "head_cnt": head})
-            ops.append({"name": "softmax_exp", "type": "softmax_exp", "inputs": ["scores", "max_scores"], "output": "exp_scores", "size": (1, N), "dur": dur_softmax_exp / num_heads, "output_size": list(exp_scores.shape), "toke_n_count": TokenCount, "head_cnt": head})
-            ops.append({"name": "softmax_norm", "type": "softmax_norm", "inputs": ["exp_scores"], "output": "attn_weights", "size": (1, N), "dur": dur_softmax_norm / num_heads, "output_size": list(attn_weights.shape), "toke_n_count": TokenCount, "head_cnt": head})
+            ops.append({"name": "softmax_max", "type": "softmax_max", "inputs": ["scores"], "output": "max_scores", "size": (1, N), "dur": dur_softmax_max / num_heads, "output_size": list(max_scores.shape), "token_n_count": TokenCount, "head_cnt": head})
+            ops.append({"name": "softmax_exp", "type": "softmax_exp", "inputs": ["scores", "max_scores"], "output": "exp_scores", "size": (1, N), "dur": dur_softmax_exp / num_heads, "output_size": list(exp_scores.shape), "token_n_count": TokenCount, "head_cnt": head})
+            ops.append({"name": "softmax_norm", "type": "softmax_norm", "inputs": ["exp_scores"], "output": "attn_weights", "size": (1, N), "dur": dur_softmax_norm / num_heads, "output_size": list(attn_weights.shape), "token_n_count": TokenCount, "head_cnt": head})
 
-        # 5-3. Weighted sum of values (TBD for multi-head)
+        # 5-3. Weighted sum of values
         start = time.perf_counter()
         context = torch.matmul(attn_weights, v_proj)  # [1, num_heads, seq_len_q, head_dim]
         dur_context = (time.perf_counter() - start) * 1e6
         for head in range(num_heads):  # output dimensions TBD
-            ops.append({"name": "Attn x V", "type": "multihead_dot", "inputs": ["attn_weights", "v_proj"], "output": "context", "dur": dur_context/num_heads, "output_size": list(context.shape), "head_cnt": head})
+            ops.append({"name": "Attn x V", "type": "multihead_dot", "inputs": ["attn_weights", "v_proj", "v_load"], "output": "context", "dur": dur_context/num_heads, "output_size": list(context.shape), "token_n_count": TokenCount, "head_cnt": head})
         
         # 6. Merge heads & output projection
         context = context.transpose(1, 2).contiguous().view(1, seq_len_q, -1)  # [1, seq_len_q, hidden_size]
         attn_out = block.self_attn.o_proj(context)								 
-        ops.append({"name": "Output projection", "type": "linear", "inputs": ["context"], "output": "attn_out", "dur": 100.0, "output_size": list(attn_out.shape)})
+        ops.append({"name": "Output projection", "type": "linear", "inputs": ["context"], "output": "attn_out", "dur": 100.0, "output_size": list(attn_out.shape), "token_n_count": TokenCount})
 
         # 7. Residual connection after attention
         start = time.perf_counter()
         attn_residual = attn_out = context + q
-        ops.append({"name": "Residual1", "type": "add", "inputs": ["attn_out", "q"], "output": "attn_residual", "dur": (time.perf_counter() - start) * 1e6, "output_size": list(attn_residual.shape), "toke_n_count": TokenCount})
+        ops.append({"name": "Residual1", "type": "add", "inputs": ["attn_out", "q"], "output": "attn_residual", "dur": (time.perf_counter() - start) * 1e6, "output_size": list(attn_residual.shape), "token_n_count": TokenCount})
 
         # 8. LayerNorm before MLP
         start = time.perf_counter()
         mlp_input = block.post_attention_layernorm(attn_residual)
         dur = (time.perf_counter() - start) * 1e6
-        ops.append({"name": "LayerNorm2", "type": "layernorm", "inputs": ["attn_residual"], "output": "mlp_input", "dur": dur, "output_size": list(mlp_input.shape), "toke_n_count": TokenCount})
+        ops.append({"name": "LayerNorm2", "type": "layernorm", "inputs": ["attn_residual"], "output": "mlp_input", "dur": dur, "output_size": list(mlp_input.shape), "token_n_count": TokenCount})
 
         # 9. MLP
         start = time.perf_counter()
         mlp_out = block.mlp(mlp_input)
         dur = (time.perf_counter() - start) * 1e6
-        ops.append({"name": "MLP", "type": "dot", "inputs": ["mlp_input"], "output": "mlp_out", "dur": dur, "output_size": list(mlp_out.shape), "toke_n_count": TokenCount})
+        ops.append({"name": "MLP", "type": "dot", "inputs": ["mlp_input"], "output": "mlp_out", "dur": dur, "output_size": list(mlp_out.shape), "token_n_count": TokenCount})
 
         # 10. Add & Normalize
         start = time.perf_counter()
         out = mlp_out + mlp_input
         out = block.post_attention_layernorm(out)
-        ops.append({"name": "Residual2", "type": "add", "inputs": ["mlp_out", "mlp_input"], "output": "out", "dur": (time.perf_counter() - start) * 1e6, "output_size": list(out.shape), "toke_n_count": TokenCount})
-
-        # 11. Memory Transfer: Storing updated KV cache
-        ops.append({"name": "mem_transfer_store_kv_cache", "type": "mem_transfer_store_kv_cache", "inputs": ["attn_out"], "output": "kv_cache", "dur": 1200, "output_size": [list(k.shape), list(v.shape)], "toke_n_count": TokenCount})
+        ops.append({"name": "Residual2", "type": "add", "inputs": ["mlp_input", "mlp_out"], "output": "out", "dur": (time.perf_counter() - start) * 1e6, "output_size": list(out.shape), "token_n_count": TokenCount})
+            # little trick to put "mlp_out" after "mlp_input" in the inputs list so that scheduling will keep it in the same engine of MLP
 
     return ops, num_heads
 

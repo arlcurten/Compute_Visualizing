@@ -2,8 +2,6 @@
 Description:
     This module provides functionality to write performance tracing data in the Perfetto format.
 
-    It includes a `PerfettoTraceWriter` class to create and write trace events to a JSON file,
-    and a function `generate_trace_events` to generate trace events based on operations and a scheduler.
 """
 
 import json

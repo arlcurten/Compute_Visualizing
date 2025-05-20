@@ -4,7 +4,7 @@
       "name": "mem_transfer_load_kv_cache",
       "ph": "X",
       "ts": 0,
-      "dur": 1222,
+      "dur": 1240,
       "pid": 0,
       "tid": 0,
       "args": {
@@ -29,7 +29,7 @@
       "name": "LayerNorm1",
       "ph": "X",
       "ts": 0,
-      "dur": 310,
+      "dur": 317,
       "pid": 0,
       "tid": 1,
       "args": {
@@ -46,10 +46,10 @@
     {
       "name": "Q_proj",
       "ph": "X",
-      "ts": 310,
-      "dur": 832,
+      "ts": 317,
+      "dur": 806,
       "pid": 0,
-      "tid": 2,
+      "tid": 1,
       "args": {
         "type": "linear",
         "output_shape": [
@@ -64,10 +64,10 @@
     {
       "name": "K_proj",
       "ph": "X",
-      "ts": 1222,
-      "dur": 790,
+      "ts": 0,
+      "dur": 831,
       "pid": 0,
-      "tid": 3,
+      "tid": 2,
       "args": {
         "type": "linear",
         "output_shape": [
@@ -82,10 +82,10 @@
     {
       "name": "V_proj",
       "ph": "X",
-      "ts": 1222,
-      "dur": 806,
+      "ts": 0,
+      "dur": 797,
       "pid": 0,
-      "tid": 1,
+      "tid": 3,
       "args": {
         "type": "linear",
         "output_shape": [
@@ -100,10 +100,10 @@
     {
       "name": "RoPE_q",
       "ph": "X",
-      "ts": 1142,
-      "dur": 509,
+      "ts": 1123,
+      "dur": 480,
       "pid": 0,
-      "tid": 2,
+      "tid": 1,
       "args": {
         "type": "rotary_embedding",
         "output_shape": [
@@ -120,10 +120,10 @@
     {
       "name": "RoPE_k",
       "ph": "X",
-      "ts": 2012,
-      "dur": 489,
+      "ts": 831,
+      "dur": 525,
       "pid": 0,
-      "tid": 0,
+      "tid": 2,
       "args": {
         "type": "rotary_embedding",
         "output_shape": [
@@ -138,3302 +138,12 @@
       }
     },
     {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2501,
-      "dur": 32,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 0
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2501,
-      "dur": 32,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 1
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2501,
-      "dur": 31,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 2
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2501,
-      "dur": 31,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 3
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2532,
-      "dur": 32,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 4
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2532,
-      "dur": 31,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 5
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2533,
-      "dur": 30,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 6
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2533,
-      "dur": 31,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 7
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2563,
-      "dur": 31,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 8
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2563,
-      "dur": 32,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 9
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2564,
-      "dur": 32,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 10
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2564,
-      "dur": 32,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 11
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2594,
-      "dur": 32,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 12
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2595,
-      "dur": 30,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 13
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2596,
-      "dur": 31,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 14
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2596,
-      "dur": 30,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 15
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2625,
-      "dur": 32,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 16
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2626,
-      "dur": 31,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 17
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2626,
-      "dur": 32,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 18
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2627,
-      "dur": 31,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 19
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2657,
-      "dur": 32,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 20
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2657,
-      "dur": 31,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 21
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2658,
-      "dur": 30,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 22
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2658,
-      "dur": 30,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 23
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2688,
-      "dur": 30,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 24
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2688,
-      "dur": 30,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 25
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2688,
-      "dur": 31,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 26
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2689,
-      "dur": 31,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 27
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2718,
-      "dur": 31,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 28
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2718,
-      "dur": 30,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 29
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2719,
-      "dur": 31,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 30
-      }
-    },
-    {
-      "name": "QK^T",
-      "ph": "X",
-      "ts": 2720,
-      "dur": 30,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 31
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2750,
-      "dur": 9,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 0
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2759,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 0
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2771,
-      "dur": 12,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 0
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2750,
-      "dur": 9,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 1
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2759,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 1
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2771,
-      "dur": 12,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 1
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2771,
-      "dur": 9,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 2
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2780,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 2
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2792,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 2
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2783,
-      "dur": 9,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 3
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2792,
-      "dur": 12,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 3
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2804,
-      "dur": 12,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 3
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2792,
-      "dur": 9,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 4
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2801,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 4
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2813,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 4
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2804,
-      "dur": 9,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 5
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2813,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 5
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2825,
-      "dur": 12,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 5
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2816,
-      "dur": 9,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 6
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2825,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 6
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2837,
-      "dur": 12,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 6
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2825,
-      "dur": 9,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 7
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2834,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 7
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2846,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 7
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2837,
-      "dur": 9,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 8
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2846,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 8
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2858,
-      "dur": 12,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 8
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2849,
-      "dur": 9,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 9
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2858,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 9
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2870,
-      "dur": 12,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 9
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2858,
-      "dur": 9,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 10
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2867,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 10
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2879,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 10
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2870,
-      "dur": 9,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 11
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2879,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 11
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2891,
-      "dur": 12,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 11
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2882,
-      "dur": 9,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 12
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2891,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 12
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2903,
-      "dur": 12,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 12
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2891,
-      "dur": 9,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 13
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2900,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 13
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2912,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 13
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2903,
-      "dur": 9,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 14
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2912,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 14
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2924,
-      "dur": 12,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 14
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2915,
-      "dur": 9,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 15
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2924,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 15
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2936,
-      "dur": 12,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 15
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2924,
-      "dur": 9,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 16
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2933,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 16
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2945,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 16
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2936,
-      "dur": 9,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 17
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2945,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 17
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2957,
-      "dur": 12,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 17
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2948,
-      "dur": 9,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 18
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2957,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 18
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2969,
-      "dur": 12,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 18
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2957,
-      "dur": 9,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 19
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2966,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 19
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2978,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 19
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2969,
-      "dur": 9,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 20
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2978,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 20
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 2990,
-      "dur": 12,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 20
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2981,
-      "dur": 9,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 21
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2990,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 21
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 3002,
-      "dur": 12,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 21
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 2990,
-      "dur": 9,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 22
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 2999,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 22
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 3011,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 22
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 3002,
-      "dur": 9,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 23
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 3011,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 23
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 3023,
-      "dur": 12,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 23
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 3014,
-      "dur": 9,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 24
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 3023,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 24
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 3035,
-      "dur": 12,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 24
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 3023,
-      "dur": 9,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 25
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 3032,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 25
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 3044,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 25
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 3035,
-      "dur": 9,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 26
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 3044,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 26
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 3056,
-      "dur": 12,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 26
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 3047,
-      "dur": 9,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 27
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 3056,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 27
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 3068,
-      "dur": 12,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 27
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 3056,
-      "dur": 9,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 28
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 3065,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 28
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 3077,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 28
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 3068,
-      "dur": 9,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 29
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 3077,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 29
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 3089,
-      "dur": 12,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 29
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 3080,
-      "dur": 9,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 30
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 3089,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 30
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 3101,
-      "dur": 12,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 30
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 3089,
-      "dur": 9,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 1,
-        "head_count": 31
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 3098,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 31
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 3110,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 1,
-        "head_count": 31
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3122,
-      "dur": 30,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 0
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3122,
-      "dur": 31,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 1
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3122,
-      "dur": 32,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 2
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3122,
-      "dur": 32,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 3
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3152,
-      "dur": 32,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 4
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3153,
-      "dur": 32,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 5
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3154,
-      "dur": 30,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 6
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3154,
-      "dur": 31,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 7
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3184,
-      "dur": 30,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 8
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3184,
-      "dur": 31,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 9
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3185,
-      "dur": 31,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 10
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3185,
-      "dur": 31,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 11
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3214,
-      "dur": 31,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 12
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3215,
-      "dur": 31,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 13
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3216,
-      "dur": 31,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 14
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3216,
-      "dur": 31,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 15
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3245,
-      "dur": 32,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 16
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3246,
-      "dur": 31,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 17
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3247,
-      "dur": 31,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 18
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3247,
-      "dur": 32,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 19
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3277,
-      "dur": 32,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 20
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3277,
-      "dur": 32,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 21
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3278,
-      "dur": 32,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 22
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3279,
-      "dur": 31,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 23
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3309,
-      "dur": 32,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 24
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3309,
-      "dur": 31,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 25
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3310,
-      "dur": 30,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 26
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3310,
-      "dur": 31,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 27
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3340,
-      "dur": 32,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 28
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3340,
-      "dur": 31,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 29
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3341,
-      "dur": 32,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 30
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 3341,
-      "dur": 31,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 31
-      }
-    },
-    {
-      "name": "Output projection",
-      "ph": "X",
-      "ts": 3372,
-      "dur": 836,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "linear",
-        "output_shape": [
-          1,
-          1,
-          2048
-        ],
-        "toke_count": 1,
-        "head_count": 0
-      }
-    },
-    {
-      "name": "Residual1",
-      "ph": "X",
-      "ts": 4208,
-      "dur": 297,
-      "pid": 0,
-      "tid": 1,
-      "args": {
-        "type": "add",
-        "output_shape": [
-          1,
-          1,
-          2048
-        ],
-        "toke_count": 1,
-        "head_count": 0
-      }
-    },
-    {
-      "name": "LayerNorm2",
-      "ph": "X",
-      "ts": 4505,
-      "dur": 302,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "layernorm",
-        "output_shape": [
-          1,
-          1,
-          2048
-        ],
-        "toke_count": 1,
-        "head_count": 0
-      }
-    },
-    {
-      "name": "MLP",
-      "ph": "X",
-      "ts": 4807,
-      "dur": 966,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "dot",
-        "output_shape": [
-          1,
-          1,
-          2048
-        ],
-        "toke_count": 1,
-        "head_count": 0
-      }
-    },
-    {
-      "name": "Residual2",
-      "ph": "X",
-      "ts": 5773,
-      "dur": 307,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "add",
-        "output_shape": [
-          1,
-          1,
-          2048
-        ],
-        "toke_count": 1,
-        "head_count": 0
-      }
-    },
-    {
       "name": "mem_transfer_store_kv_cache",
       "ph": "X",
-      "ts": 4505,
-      "dur": 1587,
+      "ts": 1356,
+      "dur": 1589,
       "pid": 0,
-      "tid": 1,
+      "tid": 3,
       "args": {
         "type": "mem_transfer_store_kv_cache",
         "output_shape": [
@@ -3453,12 +163,3302 @@
       }
     },
     {
-      "name": "mem_transfer_load_kv_cache",
+      "name": "QK^T",
       "ph": "X",
-      "ts": 6092,
-      "dur": 1220,
+      "ts": 1603,
+      "dur": 32,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 0
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1603,
+      "dur": 32,
       "pid": 0,
       "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 1
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1603,
+      "dur": 31,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 2
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1634,
+      "dur": 31,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 3
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1635,
+      "dur": 30,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 4
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1635,
+      "dur": 31,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 5
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1665,
+      "dur": 32,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 6
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1665,
+      "dur": 32,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 7
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1666,
+      "dur": 31,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 8
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1697,
+      "dur": 30,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 9
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1697,
+      "dur": 31,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 10
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1697,
+      "dur": 32,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 11
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1727,
+      "dur": 32,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 12
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1728,
+      "dur": 31,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 13
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1729,
+      "dur": 31,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 14
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1759,
+      "dur": 32,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 15
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1759,
+      "dur": 30,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 16
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1760,
+      "dur": 31,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 17
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1789,
+      "dur": 32,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 18
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1791,
+      "dur": 30,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 19
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1791,
+      "dur": 31,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 20
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1821,
+      "dur": 30,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 21
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1821,
+      "dur": 31,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 22
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1822,
+      "dur": 32,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 23
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1851,
+      "dur": 32,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 24
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1852,
+      "dur": 32,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 25
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1854,
+      "dur": 30,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 26
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1883,
+      "dur": 32,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 27
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1884,
+      "dur": 32,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 28
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1884,
+      "dur": 31,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 29
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1915,
+      "dur": 32,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 30
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 1915,
+      "dur": 32,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 31
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 1947,
+      "dur": 9,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 0
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 1956,
+      "dur": 12,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 0
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 1968,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 0
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 1956,
+      "dur": 9,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 1
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 1965,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 1
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 1977,
+      "dur": 12,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 1
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 1977,
+      "dur": 9,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 2
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 1986,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 2
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 1998,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 2
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 1989,
+      "dur": 9,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 3
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 1998,
+      "dur": 12,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 3
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2010,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 3
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2010,
+      "dur": 9,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 4
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2019,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 4
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2031,
+      "dur": 12,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 4
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2022,
+      "dur": 9,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 5
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2031,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 5
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2043,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 5
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2043,
+      "dur": 9,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 6
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2052,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 6
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2064,
+      "dur": 12,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 6
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2055,
+      "dur": 9,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 7
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2064,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 7
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2076,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 7
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2076,
+      "dur": 9,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 8
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2085,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 8
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2097,
+      "dur": 12,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 8
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2088,
+      "dur": 9,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 9
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2097,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 9
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2109,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 9
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2109,
+      "dur": 9,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 10
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2118,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 10
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2130,
+      "dur": 12,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 10
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2121,
+      "dur": 9,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 11
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2130,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 11
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2142,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 11
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2142,
+      "dur": 9,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 12
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2151,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 12
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2163,
+      "dur": 12,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 12
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2154,
+      "dur": 9,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 13
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2163,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 13
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2175,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 13
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2175,
+      "dur": 9,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 14
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2184,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 14
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2196,
+      "dur": 12,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 14
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2187,
+      "dur": 9,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 15
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2196,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 15
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2208,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 15
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2208,
+      "dur": 9,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 16
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2217,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 16
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2229,
+      "dur": 12,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 16
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2220,
+      "dur": 9,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 17
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2229,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 17
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2241,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 17
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2241,
+      "dur": 9,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 18
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2250,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 18
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2262,
+      "dur": 12,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 18
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2253,
+      "dur": 9,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 19
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2262,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 19
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2274,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 19
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2274,
+      "dur": 9,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 20
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2283,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 20
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2295,
+      "dur": 12,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 20
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2286,
+      "dur": 9,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 21
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2295,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 21
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2307,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 21
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2307,
+      "dur": 9,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 22
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2316,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 22
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2328,
+      "dur": 12,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 22
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2319,
+      "dur": 9,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 23
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2328,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 23
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2340,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 23
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2340,
+      "dur": 9,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 24
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2349,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 24
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2361,
+      "dur": 12,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 24
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2352,
+      "dur": 9,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 25
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2361,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 25
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2373,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 25
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2373,
+      "dur": 9,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 26
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2382,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 26
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2394,
+      "dur": 12,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 26
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2385,
+      "dur": 9,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 27
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2394,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 27
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2406,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 27
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2406,
+      "dur": 9,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 28
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2415,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 28
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2427,
+      "dur": 12,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 28
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2418,
+      "dur": 9,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 29
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2427,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 29
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2439,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 29
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2439,
+      "dur": 9,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 30
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2448,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 30
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2460,
+      "dur": 12,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 30
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 2451,
+      "dur": 9,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 1,
+        "head_count": 31
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 2460,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 31
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 2472,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 1,
+        "head_count": 31
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2484,
+      "dur": 31,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 0
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2484,
+      "dur": 30,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 1
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2484,
+      "dur": 31,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 2
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2514,
+      "dur": 32,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 3
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2515,
+      "dur": 31,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 4
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2515,
+      "dur": 31,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 5
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2546,
+      "dur": 32,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 6
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2546,
+      "dur": 30,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 7
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2546,
+      "dur": 30,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 8
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2576,
+      "dur": 32,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 9
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2576,
+      "dur": 30,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 10
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2578,
+      "dur": 30,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 11
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2606,
+      "dur": 31,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 12
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2608,
+      "dur": 31,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 13
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2608,
+      "dur": 31,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 14
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2637,
+      "dur": 31,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 15
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2639,
+      "dur": 32,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 16
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2639,
+      "dur": 31,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 17
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2668,
+      "dur": 32,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 18
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2670,
+      "dur": 32,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 19
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2671,
+      "dur": 30,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 20
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2700,
+      "dur": 30,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 21
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2701,
+      "dur": 30,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 22
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2702,
+      "dur": 32,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 23
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2730,
+      "dur": 30,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 24
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2731,
+      "dur": 31,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 25
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2734,
+      "dur": 31,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 26
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2760,
+      "dur": 31,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 27
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2762,
+      "dur": 30,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 28
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2765,
+      "dur": 30,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 29
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2791,
+      "dur": 30,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 30
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 2792,
+      "dur": 31,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 1,
+        "head_count": 31
+      }
+    },
+    {
+      "name": "Output projection",
+      "ph": "X",
+      "ts": 2823,
+      "dur": 817,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "linear",
+        "output_shape": [
+          1,
+          1,
+          2048
+        ],
+        "toke_count": 1,
+        "head_count": 0
+      }
+    },
+    {
+      "name": "Residual1",
+      "ph": "X",
+      "ts": 3640,
+      "dur": 297,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "add",
+        "output_shape": [
+          1,
+          1,
+          2048
+        ],
+        "toke_count": 1,
+        "head_count": 0
+      }
+    },
+    {
+      "name": "LayerNorm2",
+      "ph": "X",
+      "ts": 3937,
+      "dur": 309,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "layernorm",
+        "output_shape": [
+          1,
+          1,
+          2048
+        ],
+        "toke_count": 1,
+        "head_count": 0
+      }
+    },
+    {
+      "name": "MLP",
+      "ph": "X",
+      "ts": 4246,
+      "dur": 1004,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "dot",
+        "output_shape": [
+          1,
+          1,
+          2048
+        ],
+        "toke_count": 1,
+        "head_count": 0
+      }
+    },
+    {
+      "name": "Residual2",
+      "ph": "X",
+      "ts": 5250,
+      "dur": 301,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "type": "add",
+        "output_shape": [
+          1,
+          1,
+          2048
+        ],
+        "toke_count": 1,
+        "head_count": 0
+      }
+    },
+    {
+      "name": "mem_transfer_load_kv_cache",
+      "ph": "X",
+      "ts": 2945,
+      "dur": 1200,
+      "pid": 0,
+      "tid": 1,
       "args": {
         "type": "mem_transfer_load_kv_cache",
         "output_shape": [
@@ -3480,10 +3480,10 @@
     {
       "name": "LayerNorm1",
       "ph": "X",
-      "ts": 5773,
-      "dur": 304,
+      "ts": 5551,
+      "dur": 308,
       "pid": 0,
-      "tid": 0,
+      "tid": 2,
       "args": {
         "type": "layernorm",
         "output_shape": [
@@ -3498,10 +3498,10 @@
     {
       "name": "Q_proj",
       "ph": "X",
-      "ts": 6077,
-      "dur": 828,
+      "ts": 5859,
+      "dur": 770,
       "pid": 0,
-      "tid": 0,
+      "tid": 2,
       "args": {
         "type": "linear",
         "output_shape": [
@@ -3516,8 +3516,8 @@
     {
       "name": "K_proj",
       "ph": "X",
-      "ts": 7312,
-      "dur": 847,
+      "ts": 5551,
+      "dur": 784,
       "pid": 0,
       "tid": 3,
       "args": {
@@ -3534,8 +3534,8 @@
     {
       "name": "V_proj",
       "ph": "X",
-      "ts": 7312,
-      "dur": 794,
+      "ts": 5551,
+      "dur": 845,
       "pid": 0,
       "tid": 1,
       "args": {
@@ -3552,10 +3552,10 @@
     {
       "name": "RoPE_q",
       "ph": "X",
-      "ts": 6905,
-      "dur": 523,
+      "ts": 6629,
+      "dur": 501,
       "pid": 0,
-      "tid": 0,
+      "tid": 2,
       "args": {
         "type": "rotary_embedding",
         "output_shape": [
@@ -3572,10 +3572,10 @@
     {
       "name": "RoPE_k",
       "ph": "X",
-      "ts": 8159,
-      "dur": 503,
+      "ts": 6335,
+      "dur": 525,
       "pid": 0,
-      "tid": 2,
+      "tid": 3,
       "args": {
         "type": "rotary_embedding",
         "output_shape": [
@@ -3590,12 +3590,37 @@
       }
     },
     {
-      "name": "QK^T",
+      "name": "mem_transfer_store_kv_cache",
       "ph": "X",
-      "ts": 8662,
-      "dur": 31,
+      "ts": 6860,
+      "dur": 1563,
       "pid": 0,
       "tid": 0,
+      "args": {
+        "type": "mem_transfer_store_kv_cache",
+        "output_shape": [
+          [
+            1,
+            4,
+            2048
+          ],
+          [
+            1,
+            4,
+            2048
+          ]
+        ],
+        "toke_count": 2,
+        "head_count": 0
+      }
+    },
+    {
+      "name": "QK^T",
+      "ph": "X",
+      "ts": 7130,
+      "dur": 32,
+      "pid": 0,
+      "tid": 1,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -3612,10 +3637,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8662,
+      "ts": 7130,
       "dur": 31,
       "pid": 0,
-      "tid": 1,
+      "tid": 3,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -3632,10 +3657,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8662,
-      "dur": 32,
+      "ts": 7130,
+      "dur": 31,
       "pid": 0,
-      "tid": 3,
+      "tid": 2,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -3652,7 +3677,7 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8662,
+      "ts": 7161,
       "dur": 32,
       "pid": 0,
       "tid": 2,
@@ -3672,10 +3697,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8693,
+      "ts": 7161,
       "dur": 30,
       "pid": 0,
-      "tid": 0,
+      "tid": 3,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -3692,7 +3717,7 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8693,
+      "ts": 7162,
       "dur": 31,
       "pid": 0,
       "tid": 1,
@@ -3712,10 +3737,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8694,
+      "ts": 7191,
       "dur": 32,
       "pid": 0,
-      "tid": 2,
+      "tid": 3,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -3732,10 +3757,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8694,
+      "ts": 7193,
       "dur": 32,
       "pid": 0,
-      "tid": 3,
+      "tid": 1,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -3752,10 +3777,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8723,
-      "dur": 30,
+      "ts": 7193,
+      "dur": 31,
       "pid": 0,
-      "tid": 0,
+      "tid": 2,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -3772,10 +3797,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8724,
-      "dur": 32,
+      "ts": 7223,
+      "dur": 30,
       "pid": 0,
-      "tid": 1,
+      "tid": 3,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -3792,8 +3817,8 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8726,
-      "dur": 32,
+      "ts": 7224,
+      "dur": 31,
       "pid": 0,
       "tid": 2,
       "args": {
@@ -3812,10 +3837,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8726,
+      "ts": 7225,
       "dur": 31,
       "pid": 0,
-      "tid": 3,
+      "tid": 1,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -3832,10 +3857,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8753,
+      "ts": 7253,
       "dur": 31,
       "pid": 0,
-      "tid": 0,
+      "tid": 3,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -3852,10 +3877,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8756,
-      "dur": 30,
+      "ts": 7255,
+      "dur": 31,
       "pid": 0,
-      "tid": 1,
+      "tid": 2,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -3872,10 +3897,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8757,
+      "ts": 7256,
       "dur": 31,
       "pid": 0,
-      "tid": 3,
+      "tid": 1,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -3892,10 +3917,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8758,
-      "dur": 30,
+      "ts": 7284,
+      "dur": 31,
       "pid": 0,
-      "tid": 2,
+      "tid": 3,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -3912,10 +3937,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8784,
-      "dur": 31,
+      "ts": 7286,
+      "dur": 30,
       "pid": 0,
-      "tid": 0,
+      "tid": 2,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -3932,8 +3957,8 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8786,
-      "dur": 31,
+      "ts": 7287,
+      "dur": 30,
       "pid": 0,
       "tid": 1,
       "args": {
@@ -3952,10 +3977,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8788,
-      "dur": 30,
+      "ts": 7315,
+      "dur": 31,
       "pid": 0,
-      "tid": 2,
+      "tid": 3,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -3972,10 +3997,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8788,
+      "ts": 7316,
       "dur": 30,
       "pid": 0,
-      "tid": 3,
+      "tid": 2,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -3992,10 +4017,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8815,
-      "dur": 32,
+      "ts": 7317,
+      "dur": 30,
       "pid": 0,
-      "tid": 0,
+      "tid": 1,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -4012,10 +4037,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8817,
-      "dur": 30,
+      "ts": 7346,
+      "dur": 31,
       "pid": 0,
-      "tid": 1,
+      "tid": 2,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -4032,10 +4057,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8818,
+      "ts": 7346,
       "dur": 30,
       "pid": 0,
-      "tid": 2,
+      "tid": 3,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -4052,10 +4077,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8818,
-      "dur": 32,
+      "ts": 7347,
+      "dur": 30,
       "pid": 0,
-      "tid": 3,
+      "tid": 1,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -4072,10 +4097,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8847,
-      "dur": 30,
+      "ts": 7376,
+      "dur": 32,
       "pid": 0,
-      "tid": 0,
+      "tid": 3,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -4092,8 +4117,8 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8847,
-      "dur": 32,
+      "ts": 7377,
+      "dur": 31,
       "pid": 0,
       "tid": 1,
       "args": {
@@ -4112,8 +4137,8 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8848,
-      "dur": 30,
+      "ts": 7377,
+      "dur": 32,
       "pid": 0,
       "tid": 2,
       "args": {
@@ -4132,10 +4157,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8850,
-      "dur": 32,
+      "ts": 7408,
+      "dur": 31,
       "pid": 0,
-      "tid": 3,
+      "tid": 1,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -4152,10 +4177,10 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8877,
-      "dur": 30,
+      "ts": 7408,
+      "dur": 31,
       "pid": 0,
-      "tid": 0,
+      "tid": 3,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -4172,8 +4197,8 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8878,
-      "dur": 31,
+      "ts": 7409,
+      "dur": 32,
       "pid": 0,
       "tid": 2,
       "args": {
@@ -4192,7 +4217,7 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8879,
+      "ts": 7439,
       "dur": 32,
       "pid": 0,
       "tid": 1,
@@ -4212,8 +4237,8 @@
     {
       "name": "QK^T",
       "ph": "X",
-      "ts": 8882,
-      "dur": 31,
+      "ts": 7439,
+      "dur": 30,
       "pid": 0,
       "tid": 3,
       "args": {
@@ -4232,10 +4257,10 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 8913,
+      "ts": 7469,
       "dur": 9,
       "pid": 0,
-      "tid": 0,
+      "tid": 2,
       "args": {
         "type": "softmax_max",
         "output_shape": [
@@ -4252,10 +4277,10 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 8922,
+      "ts": 7478,
       "dur": 12,
       "pid": 0,
-      "tid": 2,
+      "tid": 3,
       "args": {
         "type": "softmax_exp",
         "output_shape": [
@@ -4272,7 +4297,7 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 8934,
+      "ts": 7490,
       "dur": 12,
       "pid": 0,
       "tid": 1,
@@ -4292,10 +4317,10 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 8913,
+      "ts": 7478,
       "dur": 9,
       "pid": 0,
-      "tid": 3,
+      "tid": 2,
       "args": {
         "type": "softmax_max",
         "output_shape": [
@@ -4312,67 +4337,7 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 8922,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 2,
-        "head_count": 1
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 8934,
-      "dur": 12,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 2,
-        "head_count": 1
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 8934,
-      "dur": 9,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 2,
-        "head_count": 2
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 8943,
+      "ts": 7487,
       "dur": 12,
       "pid": 0,
       "tid": 2,
@@ -4386,16 +4351,76 @@
           4
         ],
         "toke_count": 2,
+        "head_count": 1
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 7499,
+      "dur": 12,
+      "pid": 0,
+      "tid": 3,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 2,
+        "head_count": 1
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 7499,
+      "dur": 9,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 2,
+        "head_count": 2
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 7508,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 2,
         "head_count": 2
       }
     },
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 8955,
+      "ts": 7520,
       "dur": 12,
       "pid": 0,
-      "tid": 0,
+      "tid": 2,
       "args": {
         "type": "softmax_norm",
         "output_shape": [
@@ -4412,7 +4437,67 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 8946,
+      "ts": 7511,
+      "dur": 9,
+      "pid": 0,
+      "tid": 3,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 2,
+        "head_count": 3
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 7520,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 2,
+        "head_count": 3
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 7532,
+      "dur": 12,
+      "pid": 0,
+      "tid": 3,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 2,
+        "head_count": 3
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 7532,
       "dur": 9,
       "pid": 0,
       "tid": 1,
@@ -4426,16 +4511,16 @@
           1
         ],
         "toke_count": 2,
-        "head_count": 3
+        "head_count": 4
       }
     },
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 8955,
+      "ts": 7541,
       "dur": 12,
       "pid": 0,
-      "tid": 3,
+      "tid": 2,
       "args": {
         "type": "softmax_exp",
         "output_shape": [
@@ -4446,13 +4531,13 @@
           4
         ],
         "toke_count": 2,
-        "head_count": 3
+        "head_count": 4
       }
     },
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 8967,
+      "ts": 7553,
       "dur": 12,
       "pid": 0,
       "tid": 1,
@@ -4466,73 +4551,13 @@
           4
         ],
         "toke_count": 2,
-        "head_count": 3
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 8955,
-      "dur": 9,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 2,
-        "head_count": 4
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 8964,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 2,
-        "head_count": 4
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 8976,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 2,
         "head_count": 4
       }
     },
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 8967,
+      "ts": 7544,
       "dur": 9,
       "pid": 0,
       "tid": 3,
@@ -4552,7 +4577,7 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 8976,
+      "ts": 7553,
       "dur": 12,
       "pid": 0,
       "tid": 2,
@@ -4572,7 +4597,7 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 8988,
+      "ts": 7565,
       "dur": 12,
       "pid": 0,
       "tid": 3,
@@ -4592,7 +4617,7 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 8979,
+      "ts": 7565,
       "dur": 9,
       "pid": 0,
       "tid": 1,
@@ -4612,10 +4637,10 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 8988,
+      "ts": 7574,
       "dur": 12,
       "pid": 0,
-      "tid": 0,
+      "tid": 2,
       "args": {
         "type": "softmax_exp",
         "output_shape": [
@@ -4632,7 +4657,7 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9000,
+      "ts": 7586,
       "dur": 12,
       "pid": 0,
       "tid": 1,
@@ -4652,67 +4677,7 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 8988,
-      "dur": 9,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 2,
-        "head_count": 7
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 8997,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 2,
-        "head_count": 7
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 9009,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 2,
-        "head_count": 7
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 9000,
+      "ts": 7577,
       "dur": 9,
       "pid": 0,
       "tid": 3,
@@ -4726,13 +4691,13 @@
           1
         ],
         "toke_count": 2,
-        "head_count": 8
+        "head_count": 7
       }
     },
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9009,
+      "ts": 7586,
       "dur": 12,
       "pid": 0,
       "tid": 2,
@@ -4746,13 +4711,13 @@
           4
         ],
         "toke_count": 2,
-        "head_count": 8
+        "head_count": 7
       }
     },
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9021,
+      "ts": 7598,
       "dur": 12,
       "pid": 0,
       "tid": 3,
@@ -4766,16 +4731,76 @@
           4
         ],
         "toke_count": 2,
+        "head_count": 7
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 7598,
+      "dur": 9,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 2,
+        "head_count": 8
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 7607,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 2,
+        "head_count": 8
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 7619,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 2,
         "head_count": 8
       }
     },
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9012,
+      "ts": 7610,
       "dur": 9,
       "pid": 0,
-      "tid": 1,
+      "tid": 3,
       "args": {
         "type": "softmax_max",
         "output_shape": [
@@ -4792,10 +4817,10 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9021,
+      "ts": 7619,
       "dur": 12,
       "pid": 0,
-      "tid": 0,
+      "tid": 2,
       "args": {
         "type": "softmax_exp",
         "output_shape": [
@@ -4812,10 +4837,10 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9033,
+      "ts": 7631,
       "dur": 12,
       "pid": 0,
-      "tid": 1,
+      "tid": 3,
       "args": {
         "type": "softmax_norm",
         "output_shape": [
@@ -4832,10 +4857,10 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9021,
+      "ts": 7631,
       "dur": 9,
       "pid": 0,
-      "tid": 2,
+      "tid": 1,
       "args": {
         "type": "softmax_max",
         "output_shape": [
@@ -4852,7 +4877,7 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9030,
+      "ts": 7640,
       "dur": 12,
       "pid": 0,
       "tid": 2,
@@ -4872,10 +4897,10 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9042,
+      "ts": 7652,
       "dur": 12,
       "pid": 0,
-      "tid": 0,
+      "tid": 1,
       "args": {
         "type": "softmax_norm",
         "output_shape": [
@@ -4892,7 +4917,7 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9033,
+      "ts": 7643,
       "dur": 9,
       "pid": 0,
       "tid": 3,
@@ -4912,7 +4937,7 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9042,
+      "ts": 7652,
       "dur": 12,
       "pid": 0,
       "tid": 2,
@@ -4932,7 +4957,7 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9054,
+      "ts": 7664,
       "dur": 12,
       "pid": 0,
       "tid": 3,
@@ -4952,7 +4977,7 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9045,
+      "ts": 7664,
       "dur": 9,
       "pid": 0,
       "tid": 1,
@@ -4972,10 +4997,10 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9054,
+      "ts": 7673,
       "dur": 12,
       "pid": 0,
-      "tid": 0,
+      "tid": 2,
       "args": {
         "type": "softmax_exp",
         "output_shape": [
@@ -4992,7 +5017,7 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9066,
+      "ts": 7685,
       "dur": 12,
       "pid": 0,
       "tid": 1,
@@ -5012,67 +5037,7 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9054,
-      "dur": 9,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 2,
-        "head_count": 13
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 9063,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 2,
-        "head_count": 13
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 9075,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 2,
-        "head_count": 13
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 9066,
+      "ts": 7676,
       "dur": 9,
       "pid": 0,
       "tid": 3,
@@ -5086,13 +5051,13 @@
           1
         ],
         "toke_count": 2,
-        "head_count": 14
+        "head_count": 13
       }
     },
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9075,
+      "ts": 7685,
       "dur": 12,
       "pid": 0,
       "tid": 2,
@@ -5106,13 +5071,13 @@
           4
         ],
         "toke_count": 2,
-        "head_count": 14
+        "head_count": 13
       }
     },
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9087,
+      "ts": 7697,
       "dur": 12,
       "pid": 0,
       "tid": 3,
@@ -5126,16 +5091,76 @@
           4
         ],
         "toke_count": 2,
+        "head_count": 13
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 7697,
+      "dur": 9,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 2,
+        "head_count": 14
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 7706,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 2,
+        "head_count": 14
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 7718,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 2,
         "head_count": 14
       }
     },
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9078,
+      "ts": 7709,
       "dur": 9,
       "pid": 0,
-      "tid": 1,
+      "tid": 3,
       "args": {
         "type": "softmax_max",
         "output_shape": [
@@ -5152,10 +5177,10 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9087,
+      "ts": 7718,
       "dur": 12,
       "pid": 0,
-      "tid": 0,
+      "tid": 2,
       "args": {
         "type": "softmax_exp",
         "output_shape": [
@@ -5172,10 +5197,10 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9099,
+      "ts": 7730,
       "dur": 12,
       "pid": 0,
-      "tid": 1,
+      "tid": 3,
       "args": {
         "type": "softmax_norm",
         "output_shape": [
@@ -5192,10 +5217,10 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9087,
+      "ts": 7730,
       "dur": 9,
       "pid": 0,
-      "tid": 2,
+      "tid": 1,
       "args": {
         "type": "softmax_max",
         "output_shape": [
@@ -5212,7 +5237,7 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9096,
+      "ts": 7739,
       "dur": 12,
       "pid": 0,
       "tid": 2,
@@ -5232,10 +5257,10 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9108,
+      "ts": 7751,
       "dur": 12,
       "pid": 0,
-      "tid": 0,
+      "tid": 1,
       "args": {
         "type": "softmax_norm",
         "output_shape": [
@@ -5252,7 +5277,7 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9099,
+      "ts": 7742,
       "dur": 9,
       "pid": 0,
       "tid": 3,
@@ -5272,7 +5297,7 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9108,
+      "ts": 7751,
       "dur": 12,
       "pid": 0,
       "tid": 2,
@@ -5292,7 +5317,7 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9120,
+      "ts": 7763,
       "dur": 12,
       "pid": 0,
       "tid": 3,
@@ -5312,7 +5337,7 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9111,
+      "ts": 7763,
       "dur": 9,
       "pid": 0,
       "tid": 1,
@@ -5332,10 +5357,10 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9120,
+      "ts": 7772,
       "dur": 12,
       "pid": 0,
-      "tid": 0,
+      "tid": 2,
       "args": {
         "type": "softmax_exp",
         "output_shape": [
@@ -5352,7 +5377,7 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9132,
+      "ts": 7784,
       "dur": 12,
       "pid": 0,
       "tid": 1,
@@ -5372,67 +5397,7 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9120,
-      "dur": 9,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 2,
-        "head_count": 19
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 9129,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 2,
-        "head_count": 19
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 9141,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 2,
-        "head_count": 19
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 9132,
+      "ts": 7775,
       "dur": 9,
       "pid": 0,
       "tid": 3,
@@ -5446,13 +5411,13 @@
           1
         ],
         "toke_count": 2,
-        "head_count": 20
+        "head_count": 19
       }
     },
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9141,
+      "ts": 7784,
       "dur": 12,
       "pid": 0,
       "tid": 2,
@@ -5466,13 +5431,13 @@
           4
         ],
         "toke_count": 2,
-        "head_count": 20
+        "head_count": 19
       }
     },
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9153,
+      "ts": 7796,
       "dur": 12,
       "pid": 0,
       "tid": 3,
@@ -5486,16 +5451,76 @@
           4
         ],
         "toke_count": 2,
+        "head_count": 19
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 7796,
+      "dur": 9,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 2,
+        "head_count": 20
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 7805,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 2,
+        "head_count": 20
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 7817,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 2,
         "head_count": 20
       }
     },
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9144,
+      "ts": 7808,
       "dur": 9,
       "pid": 0,
-      "tid": 1,
+      "tid": 3,
       "args": {
         "type": "softmax_max",
         "output_shape": [
@@ -5512,10 +5537,10 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9153,
+      "ts": 7817,
       "dur": 12,
       "pid": 0,
-      "tid": 0,
+      "tid": 2,
       "args": {
         "type": "softmax_exp",
         "output_shape": [
@@ -5532,10 +5557,10 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9165,
+      "ts": 7829,
       "dur": 12,
       "pid": 0,
-      "tid": 1,
+      "tid": 3,
       "args": {
         "type": "softmax_norm",
         "output_shape": [
@@ -5552,10 +5577,10 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9153,
+      "ts": 7829,
       "dur": 9,
       "pid": 0,
-      "tid": 2,
+      "tid": 1,
       "args": {
         "type": "softmax_max",
         "output_shape": [
@@ -5572,7 +5597,7 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9162,
+      "ts": 7838,
       "dur": 12,
       "pid": 0,
       "tid": 2,
@@ -5592,10 +5617,10 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9174,
+      "ts": 7850,
       "dur": 12,
       "pid": 0,
-      "tid": 0,
+      "tid": 1,
       "args": {
         "type": "softmax_norm",
         "output_shape": [
@@ -5612,7 +5637,7 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9165,
+      "ts": 7841,
       "dur": 9,
       "pid": 0,
       "tid": 3,
@@ -5632,7 +5657,7 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9174,
+      "ts": 7850,
       "dur": 12,
       "pid": 0,
       "tid": 2,
@@ -5652,7 +5677,7 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9186,
+      "ts": 7862,
       "dur": 12,
       "pid": 0,
       "tid": 3,
@@ -5672,7 +5697,7 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9177,
+      "ts": 7862,
       "dur": 9,
       "pid": 0,
       "tid": 1,
@@ -5692,10 +5717,10 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9186,
+      "ts": 7871,
       "dur": 12,
       "pid": 0,
-      "tid": 0,
+      "tid": 2,
       "args": {
         "type": "softmax_exp",
         "output_shape": [
@@ -5712,7 +5737,7 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9198,
+      "ts": 7883,
       "dur": 12,
       "pid": 0,
       "tid": 1,
@@ -5732,67 +5757,7 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9186,
-      "dur": 9,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_max",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          1
-        ],
-        "toke_count": 2,
-        "head_count": 25
-      }
-    },
-    {
-      "name": "softmax_exp",
-      "ph": "X",
-      "ts": 9195,
-      "dur": 12,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "softmax_exp",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 2,
-        "head_count": 25
-      }
-    },
-    {
-      "name": "softmax_norm",
-      "ph": "X",
-      "ts": 9207,
-      "dur": 12,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "softmax_norm",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          4
-        ],
-        "toke_count": 2,
-        "head_count": 25
-      }
-    },
-    {
-      "name": "softmax_max",
-      "ph": "X",
-      "ts": 9198,
+      "ts": 7874,
       "dur": 9,
       "pid": 0,
       "tid": 3,
@@ -5806,13 +5771,13 @@
           1
         ],
         "toke_count": 2,
-        "head_count": 26
+        "head_count": 25
       }
     },
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9207,
+      "ts": 7883,
       "dur": 12,
       "pid": 0,
       "tid": 2,
@@ -5826,13 +5791,13 @@
           4
         ],
         "toke_count": 2,
-        "head_count": 26
+        "head_count": 25
       }
     },
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9219,
+      "ts": 7895,
       "dur": 12,
       "pid": 0,
       "tid": 3,
@@ -5846,16 +5811,76 @@
           4
         ],
         "toke_count": 2,
+        "head_count": 25
+      }
+    },
+    {
+      "name": "softmax_max",
+      "ph": "X",
+      "ts": 7895,
+      "dur": 9,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_max",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          1
+        ],
+        "toke_count": 2,
+        "head_count": 26
+      }
+    },
+    {
+      "name": "softmax_exp",
+      "ph": "X",
+      "ts": 7904,
+      "dur": 12,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "softmax_exp",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 2,
+        "head_count": 26
+      }
+    },
+    {
+      "name": "softmax_norm",
+      "ph": "X",
+      "ts": 7916,
+      "dur": 12,
+      "pid": 0,
+      "tid": 1,
+      "args": {
+        "type": "softmax_norm",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          4
+        ],
+        "toke_count": 2,
         "head_count": 26
       }
     },
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9210,
+      "ts": 7907,
       "dur": 9,
       "pid": 0,
-      "tid": 1,
+      "tid": 3,
       "args": {
         "type": "softmax_max",
         "output_shape": [
@@ -5872,10 +5897,10 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9219,
+      "ts": 7916,
       "dur": 12,
       "pid": 0,
-      "tid": 0,
+      "tid": 2,
       "args": {
         "type": "softmax_exp",
         "output_shape": [
@@ -5892,10 +5917,10 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9231,
+      "ts": 7928,
       "dur": 12,
       "pid": 0,
-      "tid": 1,
+      "tid": 3,
       "args": {
         "type": "softmax_norm",
         "output_shape": [
@@ -5912,10 +5937,10 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9219,
+      "ts": 7928,
       "dur": 9,
       "pid": 0,
-      "tid": 2,
+      "tid": 1,
       "args": {
         "type": "softmax_max",
         "output_shape": [
@@ -5932,7 +5957,7 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9228,
+      "ts": 7937,
       "dur": 12,
       "pid": 0,
       "tid": 2,
@@ -5952,10 +5977,10 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9240,
+      "ts": 7949,
       "dur": 12,
       "pid": 0,
-      "tid": 0,
+      "tid": 1,
       "args": {
         "type": "softmax_norm",
         "output_shape": [
@@ -5972,7 +5997,7 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9231,
+      "ts": 7940,
       "dur": 9,
       "pid": 0,
       "tid": 3,
@@ -5992,7 +6017,7 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9240,
+      "ts": 7949,
       "dur": 12,
       "pid": 0,
       "tid": 2,
@@ -6012,7 +6037,7 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9252,
+      "ts": 7961,
       "dur": 12,
       "pid": 0,
       "tid": 3,
@@ -6032,7 +6057,7 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9243,
+      "ts": 7961,
       "dur": 9,
       "pid": 0,
       "tid": 1,
@@ -6052,10 +6077,10 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9252,
+      "ts": 7970,
       "dur": 12,
       "pid": 0,
-      "tid": 0,
+      "tid": 2,
       "args": {
         "type": "softmax_exp",
         "output_shape": [
@@ -6072,7 +6097,7 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9264,
+      "ts": 7982,
       "dur": 12,
       "pid": 0,
       "tid": 1,
@@ -6092,10 +6117,10 @@
     {
       "name": "softmax_max",
       "ph": "X",
-      "ts": 9252,
+      "ts": 7973,
       "dur": 9,
       "pid": 0,
-      "tid": 2,
+      "tid": 3,
       "args": {
         "type": "softmax_max",
         "output_shape": [
@@ -6112,7 +6137,7 @@
     {
       "name": "softmax_exp",
       "ph": "X",
-      "ts": 9261,
+      "ts": 7982,
       "dur": 12,
       "pid": 0,
       "tid": 2,
@@ -6132,10 +6157,10 @@
     {
       "name": "softmax_norm",
       "ph": "X",
-      "ts": 9273,
+      "ts": 7994,
       "dur": 12,
       "pid": 0,
-      "tid": 0,
+      "tid": 3,
       "args": {
         "type": "softmax_norm",
         "output_shape": [
@@ -6152,10 +6177,10 @@
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9285,
-      "dur": 32,
+      "ts": 8006,
+      "dur": 30,
       "pid": 0,
-      "tid": 3,
+      "tid": 1,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -6165,14 +6190,14 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 0
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9285,
+      "ts": 8006,
       "dur": 31,
       "pid": 0,
       "tid": 2,
@@ -6185,17 +6210,17 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 1
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9285,
+      "ts": 8006,
       "dur": 30,
       "pid": 0,
-      "tid": 1,
+      "tid": 3,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -6205,17 +6230,17 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 2
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9285,
+      "ts": 8036,
       "dur": 32,
       "pid": 0,
-      "tid": 0,
+      "tid": 1,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -6225,17 +6250,17 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 3
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9315,
-      "dur": 31,
+      "ts": 8036,
+      "dur": 30,
       "pid": 0,
-      "tid": 1,
+      "tid": 3,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -6245,15 +6270,15 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 4
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9316,
-      "dur": 30,
+      "ts": 8037,
+      "dur": 31,
       "pid": 0,
       "tid": 2,
       "args": {
@@ -6265,17 +6290,17 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 5
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9317,
-      "dur": 32,
+      "ts": 8066,
+      "dur": 31,
       "pid": 0,
-      "tid": 0,
+      "tid": 3,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -6285,17 +6310,17 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 6
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9317,
-      "dur": 31,
+      "ts": 8068,
+      "dur": 30,
       "pid": 0,
-      "tid": 3,
+      "tid": 1,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -6305,17 +6330,17 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 7
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9346,
-      "dur": 32,
+      "ts": 8068,
+      "dur": 30,
       "pid": 0,
-      "tid": 1,
+      "tid": 2,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -6325,17 +6350,17 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 8
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9346,
+      "ts": 8097,
       "dur": 32,
       "pid": 0,
-      "tid": 2,
+      "tid": 3,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -6345,17 +6370,17 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 9
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9348,
-      "dur": 32,
+      "ts": 8098,
+      "dur": 30,
       "pid": 0,
-      "tid": 3,
+      "tid": 1,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -6365,17 +6390,17 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 10
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9349,
+      "ts": 8098,
       "dur": 30,
       "pid": 0,
-      "tid": 0,
+      "tid": 2,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -6385,14 +6410,14 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 11
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9378,
+      "ts": 8128,
       "dur": 32,
       "pid": 0,
       "tid": 1,
@@ -6405,15 +6430,15 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 12
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9378,
-      "dur": 32,
+      "ts": 8128,
+      "dur": 30,
       "pid": 0,
       "tid": 2,
       "args": {
@@ -6425,17 +6450,17 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 13
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9379,
-      "dur": 31,
+      "ts": 8129,
+      "dur": 30,
       "pid": 0,
-      "tid": 0,
+      "tid": 3,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -6445,17 +6470,17 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 14
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9380,
-      "dur": 31,
+      "ts": 8158,
+      "dur": 32,
       "pid": 0,
-      "tid": 3,
+      "tid": 2,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -6465,17 +6490,17 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 15
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9410,
-      "dur": 31,
+      "ts": 8159,
+      "dur": 32,
       "pid": 0,
-      "tid": 0,
+      "tid": 3,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -6485,15 +6510,15 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 16
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9410,
-      "dur": 30,
+      "ts": 8160,
+      "dur": 31,
       "pid": 0,
       "tid": 1,
       "args": {
@@ -6505,15 +6530,15 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 17
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9410,
-      "dur": 31,
+      "ts": 8190,
+      "dur": 32,
       "pid": 0,
       "tid": 2,
       "args": {
@@ -6525,17 +6550,17 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 18
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9411,
-      "dur": 30,
+      "ts": 8191,
+      "dur": 31,
       "pid": 0,
-      "tid": 3,
+      "tid": 1,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -6545,17 +6570,17 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 19
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9440,
-      "dur": 31,
+      "ts": 8191,
+      "dur": 32,
       "pid": 0,
-      "tid": 1,
+      "tid": 3,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -6565,17 +6590,17 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 20
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9441,
+      "ts": 8222,
       "dur": 31,
       "pid": 0,
-      "tid": 0,
+      "tid": 1,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -6585,14 +6610,14 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 21
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9441,
+      "ts": 8222,
       "dur": 31,
       "pid": 0,
       "tid": 2,
@@ -6605,14 +6630,14 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 22
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9441,
+      "ts": 8223,
       "dur": 30,
       "pid": 0,
       "tid": 3,
@@ -6625,15 +6650,15 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 23
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9471,
-      "dur": 32,
+      "ts": 8253,
+      "dur": 30,
       "pid": 0,
       "tid": 1,
       "args": {
@@ -6645,55 +6670,15 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 24
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9471,
+      "ts": 8253,
       "dur": 30,
-      "pid": 0,
-      "tid": 3,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 25
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 9472,
-      "dur": 31,
-      "pid": 0,
-      "tid": 0,
-      "args": {
-        "type": "multihead_dot",
-        "output_shape": [
-          1,
-          1,
-          32,
-          1,
-          64
-        ],
-        "toke_count": 1,
-        "head_count": 26
-      }
-    },
-    {
-      "name": "Attn x V",
-      "ph": "X",
-      "ts": 9472,
-      "dur": 32,
       "pid": 0,
       "tid": 2,
       "args": {
@@ -6705,15 +6690,15 @@
           1,
           64
         ],
-        "toke_count": 1,
-        "head_count": 27
+        "toke_count": 2,
+        "head_count": 25
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9501,
-      "dur": 30,
+      "ts": 8253,
+      "dur": 32,
       "pid": 0,
       "tid": 3,
       "args": {
@@ -6725,17 +6710,17 @@
           1,
           64
         ],
-        "toke_count": 1,
-        "head_count": 28
+        "toke_count": 2,
+        "head_count": 26
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9503,
-      "dur": 32,
+      "ts": 8283,
+      "dur": 31,
       "pid": 0,
-      "tid": 0,
+      "tid": 1,
       "args": {
         "type": "multihead_dot",
         "output_shape": [
@@ -6745,14 +6730,54 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
+        "head_count": 27
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 8283,
+      "dur": 31,
+      "pid": 0,
+      "tid": 2,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 2,
+        "head_count": 28
+      }
+    },
+    {
+      "name": "Attn x V",
+      "ph": "X",
+      "ts": 8285,
+      "dur": 31,
+      "pid": 0,
+      "tid": 3,
+      "args": {
+        "type": "multihead_dot",
+        "output_shape": [
+          1,
+          1,
+          32,
+          1,
+          64
+        ],
+        "toke_count": 2,
         "head_count": 29
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9503,
+      "ts": 8314,
       "dur": 32,
       "pid": 0,
       "tid": 1,
@@ -6765,14 +6790,14 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 30
       }
     },
     {
       "name": "Attn x V",
       "ph": "X",
-      "ts": 9504,
+      "ts": 8314,
       "dur": 30,
       "pid": 0,
       "tid": 2,
@@ -6785,17 +6810,17 @@
           1,
           64
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 31
       }
     },
     {
       "name": "Output projection",
       "ph": "X",
-      "ts": 9534,
-      "dur": 832,
+      "ts": 8344,
+      "dur": 810,
       "pid": 0,
-      "tid": 3,
+      "tid": 2,
       "args": {
         "type": "linear",
         "output_shape": [
@@ -6803,15 +6828,15 @@
           1,
           2048
         ],
-        "toke_count": 1,
+        "toke_count": 2,
         "head_count": 0
       }
     },
     {
       "name": "Residual1",
       "ph": "X",
-      "ts": 10366,
-      "dur": 317,
+      "ts": 9154,
+      "dur": 314,
       "pid": 0,
       "tid": 2,
       "args": {
@@ -6828,10 +6853,10 @@
     {
       "name": "LayerNorm2",
       "ph": "X",
-      "ts": 10683,
-      "dur": 297,
+      "ts": 9468,
+      "dur": 294,
       "pid": 0,
-      "tid": 0,
+      "tid": 2,
       "args": {
         "type": "layernorm",
         "output_shape": [
@@ -6846,10 +6871,10 @@
     {
       "name": "MLP",
       "ph": "X",
-      "ts": 10980,
-      "dur": 971,
+      "ts": 9762,
+      "dur": 974,
       "pid": 0,
-      "tid": 1,
+      "tid": 2,
       "args": {
         "type": "dot",
         "output_shape": [
@@ -6864,41 +6889,16 @@
     {
       "name": "Residual2",
       "ph": "X",
-      "ts": 11951,
-      "dur": 312,
+      "ts": 10736,
+      "dur": 309,
       "pid": 0,
-      "tid": 3,
+      "tid": 2,
       "args": {
         "type": "add",
         "output_shape": [
           1,
           1,
           2048
-        ],
-        "toke_count": 2,
-        "head_count": 0
-      }
-    },
-    {
-      "name": "mem_transfer_store_kv_cache",
-      "ph": "X",
-      "ts": 10683,
-      "dur": 1562,
-      "pid": 0,
-      "tid": 2,
-      "args": {
-        "type": "mem_transfer_store_kv_cache",
-        "output_shape": [
-          [
-            1,
-            4,
-            2048
-          ],
-          [
-            1,
-            4,
-            2048
-          ]
         ],
         "toke_count": 2,
         "head_count": 0

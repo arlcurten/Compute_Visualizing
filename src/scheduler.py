@@ -38,27 +38,36 @@ class Scheduler:
     def __init__(self, num_engines=4):
         self.num_engines = num_engines
         self.engine_avai_time = [0] * num_engines  # Tracks next available time for each engine
-        self.map_output_to_time = {}  # key:output_name, value:[end_time, engine_id]
+        self.map_output_to_time = {}  # key:output_name, value:[end_time, engine_id, token_n_count]
         # self.current_engine = 0  # Tracks the next engine to assign work to
 
     def schedule(self, duration, op):
-        # Search "end_time" of the output_name which is the input of the current op
+        token_n_count = op["token_n_count"] if "token_n_count" in op else 1
         start_time = 0
+        pre_engine_id = None  # Initialize pre_engine_id to None
+        pre_token_n_count = token_n_count
+        
+        # Search "end_time" of the output_name which is the input of the current op
         for input in op["inputs"]: 
             if input in self.map_output_to_time:  # Check if the input is an output of a previous operation
-                pre_end_time, pre_engine_id = self.map_output_to_time[input]
+                pre_end_time, pre_engine_id, pre_token_n_count = self.map_output_to_time[input]
                 start_time = max(start_time, pre_end_time)  # select the max end_time of all inputs
 
-        # Find the available engine at the earliest time
-        engine_id = 0
-        min_time = self.engine_avai_time[engine_id]  # start searching from engine=0
-        for i in range(self.num_engines):
-            if self.engine_avai_time[i] < min_time: 
-                min_time = self.engine_avai_time[i]
-                engine_id = i
-
-        # The start time of the current op is the max of the engine's available time and the start_time of the input
-        start_time = max(start_time, min_time)  # The start time of the current op is the max of the engine's available time and the start_time of the input
+        # check if the input can be scheduled in the same engine
+        bool_name = op["name"] != "QK^T" and op["name"] != "softmax_max" and op["name"] != "softmax_exp" and op["name"] != "softmax_norm" and op["name"] != "Attn x V" 
+        if (pre_engine_id != None) and (start_time==pre_end_time) and token_n_count==pre_token_n_count and bool_name:
+            engine_id = pre_engine_id
+            start_time = self.engine_avai_time[engine_id]
+        else:
+            # if not, find the available engine at the earliest time
+            engine_id = 0
+            min_time = self.engine_avai_time[engine_id]  # start searching from engine=0
+            for i in range(self.num_engines):
+                if self.engine_avai_time[i] < min_time: 
+                    min_time = self.engine_avai_time[i]
+                    engine_id = i
+            # The start time of the current op is the max of the engine's available time and the start_time of the input
+            start_time = max(start_time, min_time)  # The start time of the current op is the max of the engine's available time and the start_time of the input
         
         # Update the engine's available time, fitted to multi-head condition
         self.engine_avai_time[engine_id] = start_time + duration    
@@ -66,10 +75,10 @@ class Scheduler:
         # Update the map_output_to_time
         # In multi-head condition, the output name is the same for all heads; hence, it will be updated the last (max) one
         if op["name"] == "mem_transfer_load_kv_cache":  # special case with 2 outputs for mem_transfer_load_kv_cache
-            self.map_output_to_time[op["output"][0]] = [self.engine_avai_time[engine_id], engine_id]
-            self.map_output_to_time[op["output"][1]] = [self.engine_avai_time[engine_id], engine_id]
+            self.map_output_to_time[op["output"][0]] = [self.engine_avai_time[engine_id], engine_id, token_n_count]
+            self.map_output_to_time[op["output"][1]] = [self.engine_avai_time[engine_id], engine_id, token_n_count]
         else:
-            self.map_output_to_time[op["output"]] = [self.engine_avai_time[engine_id], engine_id] 
+            self.map_output_to_time[op["output"]] = [self.engine_avai_time[engine_id], engine_id, token_n_count] 
 
         return engine_id, start_time
 
@@ -82,7 +91,7 @@ def generate_trace_events(ops, scheduler, num_heads=1, Total_TokenCount=1):
         duration = estimate_duration(op_type, num_heads)   # mapping op_type to estimated duration in profiler.py
         # duration = op["dur"]  # Use the duration from the operation if available
         engine_id, start_time = scheduler.schedule(duration, op)
-        TokenCount = op["toke_n_count"] if "toke_n_count" in op else 1
+        TokenCount = op["token_n_count"] if "token_n_count" in op else 1
         head_cnt = op["head_cnt"] if "head_cnt" in op else 0
 
         if op_type == "mem_transfer":
