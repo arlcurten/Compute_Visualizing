@@ -20,36 +20,36 @@
 * Profiler has estimated duration time only (see below Additional Information for more details)
 
 **Results**:
-* Without parallelism
-![without parallelism.jpg](outputs/no_parallelism.jpg)
-<br/>
+* (5/7) Without parallelism
+![without parallelism.jpg](outputs/no_parallelism.jpg) <br/>
 
-* With parallelism
-![with parallelism.jpg](outputs/with_parallelism_1.jpg)
-<br/>
+* (5/7) With parallelism
+![with parallelism.jpg](outputs/with_parallelism_1.jpg) <br/>
 
-* Multi-head parallelism 
-![Multi-head parallelism 1.jpg](outputs/with_parallelism_multi_head_1.jpg)
+* (5/12) Multi-head parallelism 
+![Multi-head parallelism 1.jpg](outputs/with_parallelism_multi_head_1.jpg) <br/>
 
   Zoom in to scattered part (Multi-head Attention)
-![Multi-head parallelism 2.jpg](outputs/with_parallelism_multi_head_2.jpg)
-<br/>
+![Multi-head parallelism 2.jpg](outputs/with_parallelism_multi_head_2.jpg) <br/>
 
-* Multi-head parallelism with 2 tokens
+* (5/12) Multi-head parallelism with 2 tokens
 ![multiHead_2Tokens_4engines.jpg](outputs/multiHead_2Tokens_4engines.jpg)
-    ** mem_load_kv (memory load) of the 2nd token executed right after mem_store_kv (write-back) of the 1st token
-  
-    ** LayerNorm (the very first procedure) of the 2nd token was executed earlier and processed with token 1 in parallel 
-<br/>
+    ** mem_load_kv (memory load) of the 2nd token executed right after mem_store_kv (write-back) of the 1st token <br/>
+    ** LayerNorm (the very first procedure) of the 2nd token was executed earlier and processed with token 1 in parallel <br/> 
 
-* Multi-head parallelism with 2 tokens (test with 8 threads)
+* (5/12) Multi-head parallelism with 2 tokens (test with 8 threads)
 ![multiHead_2Tokens_8engines.jpg](outputs/multiHead_2Tokens_8engines.jpg)
-  ** mem_load_kv (memory load) of the 2nd token executed right after mem_store_kv (write-back) of the 1st token
-  
-  ** LayerNorm, Q_proj, and RoPE_q (the very first procedures) of the 2nd token were processed very early (in the middle of token 1 procedure) since threads availability 
-<br/>
+  ** mem_load_kv (memory load) of the 2nd token executed right after mem_store_kv (write-back) of the 1st token <br/>
+  ** LayerNorm, Q_proj, and RoPE_q (the very first procedures) of the 2nd token were processed very early (in the middle of token 1 procedure) since threads availability <br/>
+   <br/>
 
-
+* (5/20) Multi-head parallelism with 2 tokens in new scheduling method
+![multiHead_2Tokens_4engines_v4.jpg](outputs/multiHead_2Tokens_4engines_v4.jpg)
+  ** fixed -> KV Cache load directly route to (not blocked by projection or RoPE) attention block for Q*K^T <br/>
+  ** fixed -> KV Cache write back happens right away after new KV ready after projection or RoPE <br/>
+  ** scheduling -> keep process in same thread to avoid threads been oppcupied by scattered tasks <br/>
+ <br/>
+ 
 # Project Structure
 ```bash
 project-root/
@@ -74,8 +74,9 @@ project-root/
 * Multi-head processing were implemented to run in parallel. Each duration is just roughly divided total duration by the head_number.
 
 **To-do Items**:
-1. Well adjust scheduling with other algorithms
-2. Profile(duration) update should be accommodated to real execution environment 
+1. Searching for algorithms to scheduling/sliping MLP section
+2. Further scheduling/sliping RoPE sections
+3. Profile(duration) update should be accommodated to real execution environment 
    (maybe perform a forward pass with torch.profile() on original model → update parameters in profiler.py/directly edit default values of logging)
 
 <br/>
